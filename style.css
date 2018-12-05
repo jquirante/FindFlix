@@ -30,3 +30,79 @@ body{
     height: 100%;
     width: 100%;
 }
+
+.modalPageContainer {
+    background-color: black;
+    opacity: .95;
+    height: 100%;
+    width: 100%;
+}
+
+.modalPageContainer {
+    background-color: black;
+    position: relative;
+    display: inline-block;
+    opacity: .95;
+    height: 100%;
+    width: 100%;
+}
+
+.modalContainer {
+    background-color: yellow;
+    position: relative;
+    display: inline-block;
+    left: 10%;
+    top: 5%;
+    height: 90%;
+    width: 80%;
+}
+
+.modalBody {
+    vertical-align: top;
+    font-size: 0;
+    border: 1px solid black;
+    height: 70%;
+    width: 100%;
+
+}
+
+.movieDescription {
+    position: relative;
+    display: inline-block;
+    border: 1px solid black;
+    height: 100%;
+    width: 25%;
+
+}
+
+.trailerContainer {
+    vertical-align: top;
+    font-size: 0;
+    border: 1px solid black;
+    display: inline-block;
+    height: 100%;
+    width: 75%;
+
+}
+
+.modalClose {
+    box-sizing: border-box;
+    left: 95%;
+    border-style: none;
+   
+    display: inline-block;
+    position: relative;
+    font-weight: 300;
+    height: 10%;
+    width: 5%;
+    font-size: 3rem;
+    
+}
+
+.modalFooter {
+    background-color: red;
+    display: inline-block;
+    position: relative;
+    height: 30%;
+    width: 100%;
+}
