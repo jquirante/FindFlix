@@ -1,11 +1,11 @@
 
 
 $(document).ready(() => {
-    getVideos('venom trailer', 20);
+    // getVideos('venom trailer', 1);
 });
 const apiKey = "AIzaSyCRXTR0G_Slvgyjj_Vgfry6KLiw8pIMlHs";
 
-getVideos = function(query, maxResult = 20) {
+getVideos = function(query, maxResult=1) {
     const url = "https://www.googleapis.com/youtube/v3/search";
     const request = {
         url: url,
@@ -13,30 +13,34 @@ getVideos = function(query, maxResult = 20) {
         dataType: 'json',
         data: {
             key: apiKey,
-            q: query,
+            q: `${query} trailer`,
             part: 'snippet',
             maxResults: maxResult
         },
         error: err => console.log(err),
         success: result => {
             console.log(result);
-            if (result.items) {
-                const items = result.items;
-                for (var index = 0; index < items.length; ++index) {
-                    $("#videoList").append("<li><a href='#' url='" + items[index].id.videoId + "'>" + items[index].snippet.title + "</a></li>");
-                    $("#videoList li a").last().click(function() {
-                        debugger;
-                        let videoUrl = 'https://www.youtube.com/embed/' + $(this).attr('url');
-                        $("#player").attr('src', videoUrl);
-                    });
-                }
-            }
+            renderTrailorInModal(result.items[0].id.videoId)
+            // if (result.items) {
+            //     const items = result.items;
+            //     for (var index = 0; index < items.length; ++index) {
+            //         $("#videoList").append("<li><a href='#' url='" + items[index].id.videoId + "'>" + items[index].snippet.title + "</a></li>");
+            //         $("#videoList li a").last().click(function() {
+            //             debugger;
+            //             let videoUrl = 'https://www.youtube.com/embed/' + $(this).attr('url');
+            //             $("#player").attr('src', videoUrl);
+            //         });
+            //     }
+            // }
         }
     };
     $.ajax(request);
 };
 
+function renderTrailorInModal(videoId){
+    $(".youtubeIframe").attr('src',`https://www.youtube.com/embed/${videoId}`)
 
+}
 
 /* function youtubeAPI(name){
     var youtubeAjaxObject = {
