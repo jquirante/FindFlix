@@ -2,7 +2,8 @@
 
 $(document).ready(() => {
     getVideos('venom trailer', 20);
-})const apiKey = "AIzaSyCRXTR0G_Slvgyjj_Vgfry6KLiw8pIMlHs";
+});
+const apiKey = "AIzaSyCRXTR0G_Slvgyjj_Vgfry6KLiw8pIMlHs";
 
 getVideos = function(query, maxResult = 20) {
     const url = "https://www.googleapis.com/youtube/v3/search";
@@ -63,3 +64,4 @@ getVideos = function(query, maxResult = 20) {
 
     }
 }
+*/
