@@ -30,3 +30,15 @@ body{
     height: 100%;
     width: 100%;
 }
+
+.testDiv{
+    font-size: 20px;
+
+}
+.poster{
+    height: 100px;
+    width: 100px;
+    float: left;
+    background-size: cover;
+    background-position: center;
+}
