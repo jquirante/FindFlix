@@ -5,7 +5,7 @@ $(document).ready(() => {
 });
 const apiKey = "AIzaSyCRXTR0G_Slvgyjj_Vgfry6KLiw8pIMlHs";
 
-getVideos = function(query, maxResult=1) {
+getVideos = function (query, maxResult = 1) {
     const url = "https://www.googleapis.com/youtube/v3/search";
     const request = {
         url: url,
@@ -37,8 +37,8 @@ getVideos = function(query, maxResult=1) {
     $.ajax(request);
 };
 
-function renderTrailorInModal(videoId){
-    $(".youtubeIframe").attr('src',`https://www.youtube.com/embed/${videoId}`)
+function renderTrailorInModal(videoId) {
+    $(".youtubeIframe").attr('src', `https://www.youtube.com/embed/${videoId}`)
 
 }
 
