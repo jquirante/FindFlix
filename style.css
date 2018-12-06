@@ -8,10 +8,10 @@ body{
 .fullContainer{
     height: 100%;
     width: 100%;
-    display: flex;
+    display: inline;
 }
 
-.leftNavContainer{
+leftNavContainer{
     border: 1px solid black;
     height: 100%;
     width: 20%;
@@ -21,13 +21,13 @@ body{
     background-color: black;
     height: 15%;
     width: 100%;
+    display: block;
+
 }
-
-
 
 .mainContainer{
     border: 1px solid darkred;
-    height: 100%;
+    height: 85%;
     width: 100%;
 }
 
@@ -112,8 +112,8 @@ body{
 
 }
 .poster{
-    height: 100px;
-    width: 100px;
+    height: 265px;
+    width: 175px;
     float: left;
     background-size: cover;
     background-position: center;

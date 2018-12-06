@@ -1,24 +1,26 @@
-$(document).ready(initializeApp);
+$(document).ready(init);
 
-function initializeApp(){
-    console.log('Initializing App...');
+function init(){
+    console.log('Init...');
 }
 
 function getMoviePosterImages(response){
-    var resultResponse = response['results'];
-    console.log('resultResponse :', resultResponse);
+    // console.log('response:', response);
 
-    var images = [];
-    for(var i =0; i< resultResponse.length; i++){
+    var results = response['results'];
+
+    var posterImages = [];
+
+    for(var indexResult =0; indexResult< results.length; indexResult++){
         var image = $("<div>",{
             class: 'poster',
             css:{
-                backgroundImage: `url(https://image.tmdb.org/t/p/w185_and_h278_bestv2${resultResponse[i].poster_path})`
+                backgroundImage: `url(https://image.tmdb.org/t/p/w185_and_h278_bestv2${results[indexResult].poster_path})`
             }
         })
-        images.push(image);
+        posterImages.push(image);
     }
-    $(".testDiv").append(images);
+    $(".testDiv").append(posterImages);
 }
 
 var ajaxOptionsGetPoster = {
@@ -28,4 +30,5 @@ var ajaxOptionsGetPoster = {
 };
 
 $.ajax(ajaxOptionsGetPoster);
+
 
