@@ -8,9 +8,11 @@ function initializeApp() {
 
     var modal = $('.modalPageContainer');
 
-    modal.click(function (event) {
-        modal.hide();
-    });
+    $(".close-modal").click((event)=>{
+        console.log(event);
+        if($(event.target).hasClass("close-modal"))
+            modal.hide();
+    })
 }
 
 function getDataFromServer() {
