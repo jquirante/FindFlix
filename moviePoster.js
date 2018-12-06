@@ -4,18 +4,7 @@ function init(){
     console.log('Init...');
 }
 
-// function getMoviePosterImages(response){
 function getMoviePosterImage(movie) {
-
-    // var resultArray = response['results'];
-    // var posterImages = [];
-
-    // for(var indexResult =0; indexResult< resultArray.length; indexResult++){
-    //     var title = resultArray[indexResult].title;
-    //     var movieId = resultArray[indexResult].id;
-    //     var ratings = resultArray[indexResult].vote_average;
-    //     var description = resultArray[indexResult].overview;
-    //     var poster = resultArray[indexResult].poster_path;
 
         var title = movie.title;
         var movieId = movie.id;
@@ -37,9 +26,6 @@ function getMoviePosterImage(movie) {
             },
             click: handleModalShow
         });
-        // posterImages.push(image);
-    // }
-    // $(".testDiv").append(posterImages);
     $(".testDiv").append(image);
 
     function handleModalShow(){
