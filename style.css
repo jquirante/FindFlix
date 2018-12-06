@@ -31,18 +31,10 @@ leftNavContainer{
     width: 100%;
 }
 
-
-.modalPageContainer {
-    background-color: black;
-    opacity: .95;
-    height: 100%;
-    width: 100%;
-}
-
 .modalPageContainer {
     background-color: black;
     position: relative;
-    display: inline-block;
+    display: none;
     opacity: .95;
     height: 100%;
     width: 100%;
