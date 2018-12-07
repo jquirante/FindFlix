@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     font-size: 0;
     height: 100vh;
@@ -6,28 +10,28 @@ body{
 }
 
 .fullContainer{
+    position: absolute;
     height: 100%;
     width: 100%;
-    display: flex;
+    display: inline-block;
 }
 
-.leftNavContainer{
+/* .leftNavContainer{
     border: 1px solid black;
     height: 100%;
     width: 20%;
-}
+} */
 
 .headContainer{
     background-color: black;
     height: 15%;
     width: 100%;
+    display: block;
+
 }
 
-
-
 .mainContainer{
-    border: 1px solid darkred;
-    height: 100%;
+    height: 85%;
     width: 100%;
 }
 
@@ -35,10 +39,11 @@ body{
 .modalPageContainer {
     background-color: hsl(0, 0%, 0%, .4);
     position: relative;
-    display: inline-block;
+    display: none;
     height: 100%;
     width: 100%;
 }
+
 
 .modalContainer {
     font-size: 0;
@@ -157,11 +162,13 @@ body{
 }
 .testDiv{
     font-size: 20px;
+    height: 100%;
+    width: 100%;
 
 }
 .poster{
-    height: 100px;
-    width: 100px;
+    height: 35%;
+    width: 10%;
     float: left;
     background-size: cover;
     background-position: center;
