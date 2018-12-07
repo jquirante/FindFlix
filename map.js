@@ -16,9 +16,9 @@ class Map{
         this.createMarker = this.createMarker.bind(this);
         this.mapInitializedCallback = this.mapInitializedCallback.bind(this);
 
-        this.initMap(this.infoWindow)
+        this.initMap()
     }
-    initMap(iwindow){
+    initMap(){
         // var location;
         this.map = new google.maps.Map(document.getElementById('map'), {
             center: { lat: -34.397, lng: 150.644 },
