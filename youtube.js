@@ -38,7 +38,8 @@ getVideos = function(query, maxResult=1) {
 };
 
 function renderTrailorInModal(videoId){
-    $(".youtubeIframe").attr('src',`https://www.youtube.com/embed/${videoId}`)
+    
+    $(".youtubeIframe").attr('src',`https://www.youtube.com/embed/${videoId}`);
 
 }
 

@@ -174,6 +174,13 @@ body{
     background-position: center;
 }
 
+.castMemberContainer {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+}
+
 .actorImage {
     position: relative;
     display: inline-block;
@@ -192,3 +199,4 @@ body{
     height: 100%;
     width: 100%;
 }
+
