@@ -103,6 +103,7 @@ class MoviePosterService {
             this.getActorInformation (movieId);
             getVideos (title);
             $(".modalPageContainer").css('display', 'block');
+            
         }
         
     }
