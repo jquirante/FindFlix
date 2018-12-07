@@ -33,20 +33,20 @@ class MoviePosterService {
     }
 
     renderAllMoviePosters(response) {
-        debugger;
+        
         console.log('test');
         var resultsArray = response['results'];
         console.log('resultsArray', resultsArray);
 
         for (var indexResult = 0; indexResult < resultsArray.length; indexResult++) {
-            debugger;
+            
             var movie = resultsArray[indexResult];
             this.buildMoviePoster(movie);
         }
     }
 
     buildMoviePoster(movie) {
-        debugger;
+        
         var title = movie.title;
         var movieId = movie.id;
         var ratings = movie.vote_average;
@@ -71,9 +71,9 @@ class MoviePosterService {
         $(".testDiv").append(image);
 
         function handleModalShow() {
-            debugger;
+            
             console.log('handleModalShow...');
-            console.log('rating:', ratings);
+            
 
             var movieInfo = {
                 title,
