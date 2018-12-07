@@ -192,3 +192,33 @@ body{
     height: 100%;
     width: 100%;
 }
+.map-main-container{
+    height:100vh;
+    width:80vw;
+    margin:auto;
+}
+.nav-header{
+    height:20%;
+    width:100%;
+}
+.map-nav{
+    display:inline-block;
+    vertical-align: top;
+    height:100%;
+    width:30%;
+    background-color: beige;
+}
+.nav-body{
+    width:100%;
+    height:80%;
+}
+.map-container{
+    display:inline-block;
+    width:70%;
+    height: 100%;
+    background-color: lightsalmon;
+}
+
+#map{
+    height: 100%;
+}
