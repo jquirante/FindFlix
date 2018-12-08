@@ -113,7 +113,7 @@ class MoviePosterService {
         // console.log('getactor', movieArray);
         // var movieId = movieArray[0].id;
         console.log('pictures', movieId);
-    
+        $('.loading').css('display', 'inline-block');
         var settings = {
             url: `http://api.themoviedb.org/3/movie/${movieId}/credits?api_key=fb2158f8324ad535f0c817ef2fb98040`,
             dataType: 'json',
@@ -138,10 +138,10 @@ class MoviePosterService {
         console.log('movieCastArray', movieCastArray);
         for (var i = 0; i < 5; i++) {
             var castMember = movieCastArray[i].id;
-    
-            // var castMemberContainer = $('<div>', {
-            //     class: "castMemberContainer",
-            // });
+            
+            var castMemberContainer = $('<div>', {
+                class: "castMemberContainer",
+            });
     
     
     
@@ -149,17 +149,26 @@ class MoviePosterService {
                 url: `http://api.themoviedb.org/3/person/${castMember}/images?api_key=fb2158f8324ad535f0c817ef2fb98040`,
                 dataType: 'json',
                 method: 'get',
+                async: false,
                 success: function (response) {
                     console.log('actorImages', response);
+                    var castMemberName = movieCastArray[i].name;
+
+                    var castMemberName = $('<div>', {
+                        class: "castMemberNameContainer",
+                        text: `${castMemberName}`
+                    });
+
+                    
+
                     var image = $('<img>', {
                         class: 'actorImage',
-                        height: '80%',
-                        width: '15%',
                         src: `https://image.tmdb.org/t/p/w440_and_h660_bestv2/${response.profiles[0].file_path}`
                     });
     
-                    $('.modalFooter').append(image);
-                    // castMemberContainer.append(image);
+                    // $('.modalFooter').append(image);
+                    castMemberContainer.append(image);
+                    castMemberContainer.append(castMemberName);
     
                 },
                 error: function (response) {
@@ -170,7 +179,7 @@ class MoviePosterService {
             $.ajax(settings);
     
     
-            // $('.modalFooter').append(castMemberContainer);
+            $('.modalFooter').append(castMemberContainer);
         }
 }
 }
