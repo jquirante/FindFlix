@@ -5,6 +5,8 @@ var responseData;
 function initializeApp() {
     console.log('Initializing App...');
     // getDataFromServer();
+    $(".youtubeIframe").attr('src','');
+    $(".modalFooter").empty();
     
 
     var modal = $('.modalPageContainer');
