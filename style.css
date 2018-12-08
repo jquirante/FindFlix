@@ -175,6 +175,15 @@ body{
     background-position: center;
 }
 
+.castMemberNameContainer {
+    position: relative;
+    top: 2%;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    height: 10%;
+    width: 100%;
+}
 .castMemberContainer {
     position: relative;
     display: inline-block;
@@ -183,9 +192,12 @@ body{
 }
 
 .actorImage {
-    position: relative;
+    height: 85%;
+    width: 80%;
+    position: absolute;
     display: inline-block;
-    margin: 2.5% 0 0 4%;
+    top: 15%;
+    left: 10%;
 }
 
 .iframeContainer {
