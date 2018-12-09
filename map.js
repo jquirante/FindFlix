@@ -18,6 +18,9 @@ class Map{
 
         this.initMap()
     }
+    findShowtimes(){
+        // $ajax
+    }
     initMap(){
         // var location;
         this.map = new google.maps.Map(document.getElementById('map'), {

@@ -84,7 +84,7 @@ class MoviePosterService {
             click: handleModalShow
         });
 
-        $(".testDiv").append(image);
+        $(".posterContainer").append(image);
 
         function handleModalShow() {
             
