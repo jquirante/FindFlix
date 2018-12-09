@@ -34,7 +34,7 @@ body{
 .logo {
     display: inline-block;
     position: relative;
-    top: 10%;
+    top: 2%;
     left: 2%;
     height: 95%;
     width: 25%;
@@ -42,7 +42,7 @@ body{
 
 .find {
     position: relative;
-    top: 15%;
+    top: -21%;
     left: 5%;
     vertical-align: bottom;
     display: inline-block;
@@ -55,7 +55,7 @@ body{
 
 .flix {
     position: relative;
-    top: 15%;
+    top: -21%;
     left: 5%;
     vertical-align: bottom;
     display: inline-block;
@@ -66,12 +66,14 @@ body{
 }
 
 .search {
+
     position: relative;
-    display:inline-block;
-    height: 100%;
+    display: inline-block;
+    height: 84%;
     width: 20%;
-    top: 35%;
+    top: 5%;
     left: 52%;
+
 }
 
 .search > input {
@@ -91,13 +93,13 @@ body{
     background-color: black;
 }
 
+
 .posterRow {
     background-color: black;
     height: 50%;
     width: 100%;
 
 }
-
 
 .modalPageContainer {
     background-color: hsl(0, 0%, 0%, .4);
@@ -240,7 +242,7 @@ body{
     width: 100%;
 }
 
-.posterContainer{
+.movieInfoContainer{
     font-size: 20px;
     height: 100%;
     width: 100%;
@@ -249,13 +251,38 @@ body{
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.posterContainer{
+    border: 1px solid grey;
+    height: 50%;
+    width: 25%;
+    color: white;
+
+}
+.boxTitle{
+    font-size: 20px;
+    height: 15%;
+    width: 100%;
+    text-align: center;
+}
+
+.details{
+    font-size: 20px;
+    height: 25%;
+    width: 100%;
+    text-align: center;
+
+
+}
 .poster{
-    height: 60%;
-    width: 20%;
-    float: left;
-    margin: 1%;
+
+    height: 100%;
+    width: 54%;
     background-size: cover;
-    background-position: center;
+    display: inline-block;
+    position: relative;
+    left: 22%;
+
 }
 
 .poster:hover {
