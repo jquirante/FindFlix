@@ -1,7 +1,6 @@
 $(document).ready(init);
 
 function init() {
-    console.log('init...');
     let moviePosterService = new MoviePosterService;
     moviePosterService.getMoviePosters();
 }
