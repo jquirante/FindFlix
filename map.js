@@ -18,8 +18,21 @@ class Map{
 
         this.initMap()
     }
-    findShowtimes(){
-        // $ajax
+    getTodaysDate=>{
+        var todaysDate= new Date;
+        
+    }
+    findShowtimes(movieID, location,distance=10){
+        $.ajax(({
+            apikey:2GVLLSZiHtl2AM1UzOWV7qMa8UA7lmgO,
+            location,
+            distance,
+            tmdb_id:movieID,
+            time_to:})=>{
+            
+
+
+        });
     }
     initMap(){
         // var location;
