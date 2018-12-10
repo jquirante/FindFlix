@@ -18,22 +18,22 @@ class Map{
 
         this.initMap()
     }
-    getTodaysDate=>{
-        var todaysDate= new Date;
+    // getTodaysDate=>{
+    //     var todaysDate= new Date;
         
-    }
-    findShowtimes(movieID, location,distance=10){
-        $.ajax(({
-            apikey:2GVLLSZiHtl2AM1UzOWV7qMa8UA7lmgO,
-            location,
-            distance,
-            tmdb_id:movieID,
-            time_to:})=>{
+    // }
+    // findShowtimes(movieID, location,distance=10){
+    //     $.ajax(({
+    //         apikey:2GVLLSZiHtl2AM1UzOWV7qMa8UA7lmgO,
+    //         location,
+    //         distance,
+    //         tmdb_id:movieID,
+    //         time_to:})=>{
             
 
 
-        });
-    }
+    //     });
+    // }
     initMap(){
         // var location;
         this.map = new google.maps.Map(document.getElementById('map'), {
