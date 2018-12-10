@@ -10,6 +10,7 @@ class Map {
         this.map;
         this.service;
         this.infoWindow;
+        this.selectedTheaterinfoWindow = new google.maps.InfoWindow();
         this.directionsService = new google.maps.DirectionsService();
         this.directionsDisplay = new google.maps.DirectionsRenderer();
         this.currentLocation;
@@ -123,16 +124,12 @@ class Map {
         });
 
         marker.addListener('click', () => {
-            var mapOptions = {
-                zoom: 7,
-                center: place.geometry.location
-            }
             this.directionsDisplay.setMap(this.map);
-            this.calcRoute(place.geometry.location);
+            this.calcRoute(place.geometry.location, place.name);
         });
     }
 
-    calcRoute(destination) {
+    calcRoute(destination, destinationName) {
         var request = {
             origin: this.currentLocation,
             destination: destination,
@@ -141,7 +138,11 @@ class Map {
         this.directionsService.route(request, (result, status) => {
             if (status == 'OK') {
                 this.directionsDisplay.setDirections(result);
-                this.computeTotalDistance(result);
+                var total = this.computeTotalDistance(result);
+
+                this.selectedTheaterinfoWindow.setPosition(destination);
+                this.selectedTheaterinfoWindow.open(this.map);
+                this.selectedTheaterinfoWindow.setContent(`${destinationName}<br> <strong>Total distance is: ${total} km</strong>`);
             }
         });
     }
@@ -153,7 +154,7 @@ class Map {
             total += myroute.legs[i].distance.value;
         }
         total = total / 1000;
-        this.infoWindow.setContent('You are here<br> <strong>Total distance is: ' + total + ' km</strong>');
+        return total;
     }
 
     handleLocationError(browserHasGeolocation, infoWindow, pos) {
