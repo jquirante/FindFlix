@@ -1,75 +1,85 @@
 $(document).ready(initializeMap);
 var test;
-function initializeMap(){
-    test=new Map();
+
+function initializeMap() {
+    test = new Map();
 }
 
-class Map{
-    constructor(){
+class Map {
+    constructor() {
         this.map;
         this.service;
         this.infoWindow;
+        this.directionsService = new google.maps.DirectionsService();
+        this.directionsDisplay = new google.maps.DirectionsRenderer();
+        this.currentLocation;
 
-        
         this.onGetLocation = this.onGetLocation.bind(this);
         this.getLocationError = this.getLocationError.bind(this);
         this.createMarker = this.createMarker.bind(this);
         this.mapInitializedCallback = this.mapInitializedCallback.bind(this);
 
-        this.initMap()
+        this.initMap();
     }
-    // getTodaysDate=>{
-    //     var todaysDate= new Date;
-        
-    // }
-    // findShowtimes(movieID, location,distance=10){
-    //     $.ajax(({
-    //         apikey:2GVLLSZiHtl2AM1UzOWV7qMa8UA7lmgO,
-    //         location,
-    //         distance,
-    //         tmdb_id:movieID,
-    //         time_to:})=>{
-            
 
-
-    //     });
-    // }
-    initMap(){
+    initMap() {
+        var myLatlng = { lat: -34.397, lng: 150.644 };
         // var location;
         this.map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: -34.397, lng: 150.644 },
+            center: myLatlng,
             zoom: 13
         });
-        console.log('1',this.map)
+        console.log('1', this.map)
         this.infoWindow = new google.maps.InfoWindow;
         console.log(new google.maps.InfoWindow)
-        // Try HTML5 geolocation.
+            // Try HTML5 geolocation.
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition( this.onGetLocation, this.getLocationError);
+            navigator.geolocation.getCurrentPosition(this.onGetLocation, this.getLocationError);
         } else {
             // Browser doesn't support Geolocation
             handleLocationError(false, this.infoWindow, map.getCenter());
         }
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: this.map,
+            title: 'Click to zoom'
+        });
+
+        // this.map.addListener('center_changed', () => {
+        //     window.setTimeout(() => {
+        //         this.map.panTo(marker.getPosition());
+        //     }, 3000);
+        // });
+
+
     }
-    onGetLocation( position) {
+
+    onGetLocation(position) {
         var pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
         };
+        this.currentLocation = pos;
         this.infoWindow.setPosition(pos);
         this.infoWindow.setContent('You are here');
         this.infoWindow.open(this.map);
         this.map.setCenter(pos);
         var request = {
             location: pos,
-            radius: '5000',
-            type: ['theater']
+            radius: '50000',
+            type: ['movie_theater']
         };
-    
+
+        // var request = {
+        //     query: 'Museum of Contemporary Art Australia',
+        //     fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry'],
+        // };
+
         this.service = new google.maps.places.PlacesService(this.map);
         this.service.nearbySearch(request, this.mapInitializedCallback);
     }
-    getLocationError(){
+    getLocationError() {
         handleLocationError(true, this.infoWindow, this.map.getCenter());
     }
     mapInitializedCallback(results, status) {
@@ -92,13 +102,60 @@ class Map{
         return result;
     }
     createMarker(place) {
+        var image;
+        if (place.photos.length > 0) {
+            image = place.photos[0].getUrl({ 'maxWidth': 35, 'maxHeight': 35 });
+        } else {
+            image = {
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+        }
 
-        new google.maps.Marker({
+        var marker = new google.maps.Marker({
+            icon: image,
+            title: place.name,
             position: place.geometry.location,
-            map: this.map,
-            // click:
+            map: this.map
+        });
+
+        marker.addListener('click', () => {
+            var mapOptions = {
+                zoom: 7,
+                center: place.geometry.location
+            }
+            this.directionsDisplay.setMap(this.map);
+            this.calcRoute(place.geometry.location);
         });
     }
+
+    calcRoute(destination) {
+        var request = {
+            origin: this.currentLocation,
+            destination: destination,
+            travelMode: 'DRIVING'
+        };
+        this.directionsService.route(request, (result, status) => {
+            if (status == 'OK') {
+                this.directionsDisplay.setDirections(result);
+                this.computeTotalDistance(result);
+            }
+        });
+    }
+
+    computeTotalDistance(result) {
+        var total = 0;
+        var myroute = result.routes[0];
+        for (var i = 0; i < myroute.legs.length; i++) {
+            total += myroute.legs[i].distance.value;
+        }
+        total = total / 1000;
+        this.infoWindow.setContent('You are here<br> <strong>Total distance is: ' + total + ' km</strong>');
+    }
+
     handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
@@ -141,7 +198,7 @@ class Map{
 //                 radius: '5000',
 //                 type: ['theater']
 //             };
-        
+
 //             service = new google.maps.places.PlacesService(map);
 //             service.nearbySearch(request, callback);
 //         }, function () {
@@ -154,7 +211,7 @@ class Map{
 
 
 
-    
+
 // }
 
 // function callback(results, status) {
