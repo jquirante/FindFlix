@@ -3,6 +3,7 @@ var test;
 
 function initializeMap() {
     test = new Map();
+    $(".youtubeIframe").attr('src','');
 }
 
 class Map {
@@ -24,11 +25,12 @@ class Map {
     }
 
     initMap() {
+        $('.loading').css('display', 'inline-block');
         var myLatlng = { lat: -34.397, lng: 150.644 };
         // var location;
         this.map = new google.maps.Map(document.getElementById('map'), {
             center: myLatlng,
-            zoom: 13
+            zoom: 12
         });
         console.log('1', this.map)
         this.infoWindow = new google.maps.InfoWindow;
