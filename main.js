@@ -5,13 +5,14 @@ var responseData;
 function initializeApp() {
     console.log('Initializing App...');
     // getDataFromServer();
-    
+    $(".movieTitle").remove();
 
     var modal = $('.modalPageContainer');
     
     $(".close-modal").click((event)=>{
         console.log(event);
         if($(event.target).hasClass("close-modal")) {
+            $(".movieTitle").remove();
             $(".youtubeIframe").attr('src','');
             $(".modalFooter").empty();
             modal.hide();

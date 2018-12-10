@@ -53,8 +53,8 @@ body{
     position: absolute;
     display: inline-block;
     left: 10%;
-    top: 5%;
-    height: 90%;
+    top: 2.5%;
+    height: 95%;
     width: 80%;
     -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
     -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -155,14 +155,14 @@ body{
 .modalClose {
     background-color: black;
     box-sizing: border-box;
-    right:0;
+    right:-5%;
     z-index: 1;
-    opacity: .5;
     border-style: none;
     display: inline-block;
+    font-weight: normal;
     position: absolute;
-    font-weight: 300;
-    height: 5%;
+    height: 7%;
+    top: 1%;
     width: 5%;
     font-size: 2vw;
     color:white;
@@ -216,12 +216,12 @@ body{
 
 .actorImage {
     border: 1px solid rgba(255, 255, 255, 0.35);
-    height: 80%;
-    width: 75%;
+    height: 70%;
+    width: 65%;
     position: absolute;
     display: inline-block;
-    top: 15%;
-    left: 10%;
+    top: 17%;
+    left: 18%;
 }
 
 

@@ -47,16 +47,7 @@ class MoviePosterService {
         }
     }
 
-    fillMovieInformation (title, description) {
-        console.log('title', title);
-        console.log('description', description);
-        $('.movieTitle').text(title);
-        console.log($('.movieTitle').text());
-        $('.movieDescription').text(description);
-        console.log($('.movieDescription').text());
     
-    
-    }
 
     buildMoviePoster(movie) {
         var title = movie.title;
@@ -99,7 +90,7 @@ class MoviePosterService {
                 poster
             };
 
-            this.fillMovieInformation(title, description);
+            this.fillMovieInformation(title, description,movieId);
             this.getActorInformation (movieId);
             getVideos (title);
             $(".modalPageContainer").css('display', 'block');
@@ -107,7 +98,26 @@ class MoviePosterService {
         }
         
     }
+    fillMovieInformation (title, description, movieId) {
+        console.log('title', title);
+        console.log('description', description);
 
+        var movieTitleContainer = $('<div>', {
+            class: 'movieTitle',
+            text: title,
+            'data-movieId': {
+                movieId,
+            }
+        });
+
+        $('.movieContent').prepend(movieTitleContainer);
+
+        console.log($('.movieTitle').text());
+        $('.movieDescription').text(description);
+        console.log($('.movieDescription').text());
+    
+    
+    }
    
     getActorInformation(movieId) {
         // console.log('getactor', movieArray);
@@ -142,8 +152,6 @@ class MoviePosterService {
             var castMemberContainer = $('<div>', {
                 class: "castMemberContainer",
             });
-    
-    
     
             var settings = {
                 url: `http://api.themoviedb.org/3/person/${castMember}/images?api_key=fb2158f8324ad535f0c817ef2fb98040`,
