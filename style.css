@@ -34,15 +34,14 @@ body{
 .logo {
     display: inline-block;
     position: relative;
-    top: 10%;
+    top: -10%;
     left: 2%;
-    height: 95%;
-    width: 25%;
+    height: 80%;
+    width: 20%;
 }
 
 .find {
     position: relative;
-    top: 15%;
     left: 5%;
     vertical-align: bottom;
     display: inline-block;
@@ -55,7 +54,6 @@ body{
 
 .flix {
     position: relative;
-    top: 15%;
     left: 5%;
     vertical-align: bottom;
     display: inline-block;
@@ -66,12 +64,14 @@ body{
 }
 
 .search {
+
     position: relative;
-    display:inline-block;
-    height: 100%;
+    display: inline-block;
+    height: 84%;
     width: 20%;
-    top: 35%;
+    top: 5%;
     left: 52%;
+
 }
 
 .search > input {
@@ -91,6 +91,7 @@ body{
     background-color: black;
 }
 
+
 .posterRow {
     background-color: black;
     height: 50%;
@@ -98,10 +99,9 @@ body{
 
 }
 
-
 .modalPageContainer {
     background-color: hsl(0, 0%, 0%, .4);
-    position: relative;
+    position: fixed;
     display: none;
     height: 100%;
     width: 100%;
@@ -240,25 +240,54 @@ body{
     width: 100%;
 }
 
-.posterContainer{
+.movieInfoContainer{
+    background-color: black;
     font-size: 20px;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.posterContainer{
+    background-color: black;
+    height: 50%;
+    width: 25%;
+    color: white;
+
+}
+.boxTitle{
+    font-size: 20px;
+    height: 15%;
+    width: 100%;
+    text-align: center;
+}
+
+.details{
+    font-size: 20px;
+    height: 25%;
+    width: 100%;
+    text-align: center;
+
+
+}
 .poster{
-    height: 60%;
-    width: 20%;
-    float: left;
-    margin: 1%;
+    height: 90%;
+    width: 50%;
     background-size: cover;
-    background-position: center;
+    display: inline-block;
+    position: relative;
+    left: 22%;
+
 }
 
 .poster:hover {
+    z-index: 1;
+    height: 100%;
+    width: 58%;
     -webkit-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
     -moz-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
     box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
