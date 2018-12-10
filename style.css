@@ -4,9 +4,10 @@
 
 body{
     font-size: 0;
-    height: 100vh;
+    height: 190vh;
     width: 97vw;
     margin: 0;
+    background-color:black;
 }
 
 .fullContainer{
@@ -15,17 +16,12 @@ body{
     height: 100%;
     width: 100%;
     display: inline-block;
+    background-color: black;
 }
-
-/* .leftNavContainer{
-    border: 1px solid black;
-    height: 100%;
-    width: 20%;
-} */
 
 .headContainer{
     background-color: black;
-    height: 15%;
+    height: 12%;
     width: 100%;
     display: block;
 
@@ -34,12 +30,22 @@ body{
 .logo {
     display: inline-block;
     position: relative;
-    top: -10%;
     left: 2%;
-    height: 80%;
+    height: 90%;
     width: 20%;
 }
-
+.instruction{
+    height:35%;
+    position:absolute;
+    left:40%;
+    top:3%;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 2vw;
+    
+}
 .find {
     position: relative;
     left: 5%;
@@ -59,7 +65,7 @@ body{
     display: inline-block;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
-    color: red;
+    color: rgb(255, 72, 0);
     font-size: 4vw;
 }
 
@@ -91,14 +97,6 @@ body{
     background-color: black;
 }
 
-
-.posterRow {
-    background-color: black;
-    height: 50%;
-    width: 100%;
-
-}
-
 .modalPageContainer {
     background-color: hsl(0, 0%, 0%, .4);
     position: fixed;
@@ -106,7 +104,6 @@ body{
     height: 100%;
     width: 100%;
 }
-
 
 .modalContainer {
     border-radius: 2px;
@@ -116,18 +113,12 @@ body{
     display: inline-block;
     left: 10%;
     top: 2.5%;
-    height: 95%;
+    height: 93%;
     width: 80%;
     -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
     -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
     box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
 }
-
-/* .modalContainer:hover {
-    -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
-    -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
-    box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
-} */
 
 .modalBody {
     position: relative;
@@ -215,7 +206,7 @@ body{
 }
 
 .modalClose {
-    background-color: black;
+    background-color: hsl(0, 0%, 0%, .0);
     box-sizing: border-box;
     right:-5%;
     z-index: 1;
@@ -243,7 +234,7 @@ body{
 .movieInfoContainer{
     background-color: black;
     font-size: 20px;
-    height: auto;
+    height: 86vh;
     min-height: 100%;
     width: 100%;
     display: flex;
@@ -254,9 +245,10 @@ body{
 
 .posterContainer{
     background-color: black;
-    height: 50%;
-    width: 25%;
+    height: 48%;
+    width: 15%;
     color: white;
+    margin:0.9%;
 
 }
 .boxTitle{
@@ -275,12 +267,11 @@ body{
 
 }
 .poster{
-    height: 90%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     background-size: cover;
     display: inline-block;
     position: relative;
-    left: 22%;
 
 }
 
