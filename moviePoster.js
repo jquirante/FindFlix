@@ -60,11 +60,9 @@ class MoviePosterService {
         //     'text': title
         // });
 
-        var image = $("<div>", {
+        var image = $("<img>", {
             class: 'poster',
-            css: {
-                backgroundImage: `url(https://image.tmdb.org/t/p/w185_and_h278_bestv2${poster})`
-            },
+            src: `https://image.tmdb.org/t/p/w185_and_h278_bestv2${poster}`,
             'data-movieInfo': {
                 title,
                 movieId,

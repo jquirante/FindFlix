@@ -34,15 +34,14 @@ body{
 .logo {
     display: inline-block;
     position: relative;
-    top: 2%;
+    top: -10%;
     left: 2%;
-    height: 95%;
-    width: 25%;
+    height: 80%;
+    width: 20%;
 }
 
 .find {
     position: relative;
-    top: -21%;
     left: 5%;
     vertical-align: bottom;
     display: inline-block;
@@ -55,7 +54,6 @@ body{
 
 .flix {
     position: relative;
-    top: -21%;
     left: 5%;
     vertical-align: bottom;
     display: inline-block;
@@ -103,7 +101,7 @@ body{
 
 .modalPageContainer {
     background-color: hsl(0, 0%, 0%, .4);
-    position: relative;
+    position: fixed;
     display: none;
     height: 100%;
     width: 100%;
@@ -243,8 +241,10 @@ body{
 }
 
 .movieInfoContainer{
+    background-color: black;
     font-size: 20px;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -253,7 +253,7 @@ body{
 }
 
 .posterContainer{
-    border: 1px solid grey;
+    background-color: black;
     height: 50%;
     width: 25%;
     color: white;
@@ -275,9 +275,8 @@ body{
 
 }
 .poster{
-
-    height: 100%;
-    width: 54%;
+    height: 90%;
+    width: 50%;
     background-size: cover;
     display: inline-block;
     position: relative;
@@ -286,6 +285,9 @@ body{
 }
 
 .poster:hover {
+    z-index: 1;
+    height: 100%;
+    width: 58%;
     -webkit-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
     -moz-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
     box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
