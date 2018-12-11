@@ -26,7 +26,8 @@ class Map {
 
     initMap() {
         $('.loading').css('display', 'inline-block');
-        var myLatlng = { lat: -34.397, lng: 150.644 };
+        var myLatlng = { lat: 33.63490, lng: -117.74047
+        };
         // var location;
         this.map = new google.maps.Map(document.getElementById('map'), {
             center: myLatlng,
