@@ -18,10 +18,18 @@ function initializeApp() {
             $(".movieTitle").remove();
             $(".youtubeIframe").attr('src','');
             $(".modalFooter").empty();
+            $(".left-modal").css({'left' : 0});
+            $(".map-main-container").css({'right':'-100%'})
             modal.hide();
         }
             
     })
+    
+    $('.findTickets').click(function () {
+        // initMap();
+        $('.left-modal').animate({'left': '-100%' }, "slow");
+        $(".map-main-container").animate({ "right": 0 }, "slow");
+    });
 }
 
 // function getDataFromServer() {
