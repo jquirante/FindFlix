@@ -208,7 +208,7 @@
     .findTickets {
         position: relative;
         display: inline-block;
-        font-size: 2vw;
+        font-size: 6vw;
         color: white;
         border-radius: 3%;
         background-color: rgb(255, 72, 0);
@@ -632,7 +632,7 @@
     .findTickets {
         position: relative;
         display: inline-block;
-        font-size: 2vw;
+        font-size: 6vw;
         color: white;
         position: relative;
         display: inline-block;
@@ -1057,7 +1057,7 @@
     .findTickets {
         position: relative;
         display: inline-block;
-        font-size: 2vw;
+        font-size: 6vw;
         color: white;
         position: relative;
         display: inline-block;
