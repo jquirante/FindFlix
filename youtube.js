@@ -27,7 +27,7 @@ getVideos = function (query, maxResult = 1) {
             //     for (var index = 0; index < items.length; ++index) {
             //         $("#videoList").append("<li><a href='#' url='" + items[index].id.videoId + "'>" + items[index].snippet.title + "</a></li>");
             //         $("#videoList li a").last().click(function() {
-            //             debugger;
+            //            
             //             let videoUrl = 'https://www.youtube.com/embed/' + $(this).attr('url');
             //             $("#player").attr('src', videoUrl);
             //         });
