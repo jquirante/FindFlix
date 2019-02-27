@@ -89,9 +89,15 @@ class MoviePosterService {
             };
 
             this.fillMovieInformation(title, description,movieId);
+            debugger;
+            $('.loading').css('display', 'inline-block');
+
             this.getActorInformation (movieId);
             getVideos (title);
+
+            
             $(".modalPageContainer").css('display', 'block');
+
         }
     }
     fillMovieInformation (title, description, movieId) {
@@ -118,7 +124,7 @@ class MoviePosterService {
     getActorInformation(movieId) {
         // console.log('getactor', movieArray);
         // var movieId = movieArray[0].id;
-        $('.loading').css('display', 'inline-block');
+        
         var settings = {
             url: `http://api.themoviedb.org/3/movie/${movieId}/credits?api_key=fb2158f8324ad535f0c817ef2fb98040`,
             dataType: 'json',
