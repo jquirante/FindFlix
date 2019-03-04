@@ -1,3 +1,6 @@
+.modalPageContainer{
+    height: 882%;
+}
 @media only screen and (max-width: 600px) {
 
     * {
@@ -6,14 +9,14 @@
     
     .index-body {
         font-size: 0;
-        height: 190vh;
+        
         width: 97vw;
         margin: 0;
         background-color:black;
     }
     .map-body{
         font-size: 0;
-        height: 100vh;
+        
         width: 100vw;
         margin: 0;
         background-color:black;
@@ -22,7 +25,7 @@
     .fullContainer {
         font-size: 0;
         position: absolute;
-        height: 100%;
+        
         width: 100%;
         display: inline-block;
         background-color: black;
@@ -46,8 +49,8 @@
     .instruction{
         height:35%;
         position:absolute;
-        left:30%;
-        top:3%;
+        left:27%;
+        top: 15px;
         display: inline-block;
         font-family: 'Oswald', sans-serif;
         font-weight: bold;
@@ -101,16 +104,16 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 85%;
+        
         width: 100%;
         background-color: black;
     }
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        /* height: 195%; */
         width: 100%;
     }
     
@@ -118,11 +121,11 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
-        height: 90%;
-        top: 2.5%;
+        height: 850px;
+        top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -152,8 +155,8 @@
         vertical-align: top;
         font-size: 0;
         top: 0%;
-        border: 1px solid black;
-        height: 60%;
+    
+        height: 50%;
         width: 100%;
     }
     
@@ -162,8 +165,8 @@
         position: absolute;
         display: inline-block;
         border: 1px solid black;
-        top: 64%;
-        height: 36%;
+        top: 45%;
+        height: 50%;
         width: 100%;
     }
     
@@ -199,7 +202,7 @@
     .findButtonContainer {
         position: absolute;
         display: inline-block;
-        bottom: 13%;
+        bottom: -5%;
         left: 10%;
         height: 30%;
         width: 100%;
@@ -225,21 +228,21 @@
         border: 1px solid black;
         display: block;
         top:0%;
-        height: 67%;
+        height: 52%;
         width: 100%;
     }
     
     .modalClose {
         background-color: hsl(0, 0%, 0%, .0);
         box-sizing: border-box;
-        right: -5%;
+        right: -10%;
         z-index: 1;
         border-style: none;
         display: inline-block;
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: 1%;
+        top: -2%;
         width: 5%;
         font-size: 2vw;
         color: white;
@@ -249,17 +252,16 @@
         /* border: 1px solid white; */
         background-color: black;
         display: inline-block;
-        top: 67%;
+        top: 58%;
         position: absolute;
-        height: 33%;
+        height: 35%;
         width: 100%;
     }
     
     .movieInfoContainer {
         background-color: black;
         font-size: 20px;
-        height: 86vh;
-        min-height: 100%;
+        
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -274,6 +276,7 @@
         width: 250px;
         color: white;
         margin: 25px 0px;
+        margin-bottom: 50px;
     }
     
     .boxTitle {
@@ -291,7 +294,7 @@
     }
     
     .poster{
-        height: 100%;
+
         width: 100%;
         background-size: cover;
         display: inline-block;
@@ -333,19 +336,21 @@
     
     .iframeContainer {
         position: relative;
+        padding-bottom: 56.25%;
         display: block;
-        width: 100%;
-        height: 100%;
+        /* width: 100%;
+        height: 100%; */
     }
     
     .youtubeIframe {
+        position: absolute;
         height: 100%;
         width: 100%;
     }
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 99%;
         width: 100%;
         right:-100%;
     }
@@ -445,14 +450,14 @@
     }
     .index-body {
         font-size: 0;
-        height: 190vh;
+    
         width: 97vw;
         margin: 0;
         background-color:black;
     }
     .map-body{
         font-size: 0;
-        height: 100vh;
+        
         width: 100vw;
         margin: 0;
         background-color:black;
@@ -461,7 +466,7 @@
     .fullContainer {
         font-size: 0;
         position: absolute;
-        height: 100%;
+        
         width: 100%;
         display: inline-block;
         background-color: black;
@@ -485,7 +490,7 @@
         height:35%;
         position:absolute;
         left:32%;
-        top:5%;
+        top: 15px;
         display: inline-block;
         font-family: 'Oswald', sans-serif;
         font-weight: bold;
@@ -536,16 +541,16 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 85%;
+        
         width: 100%;
         background-color: black;
     }
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        /* height: 195%; */
         width: 100%;
     }
     
@@ -553,11 +558,11 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
-        height: 90%;
-        top: 2.5%;
+        height: 850px;
+        top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -587,7 +592,7 @@
         position: absolute;
         display: inline-block;
         border: 1px solid black;
-        top: 64%;
+        top: 55%;
         height: 36%;
         width: 100%;
     }
@@ -652,21 +657,21 @@
         border: 1px solid black;
         display: block;
         top:0%;
-        height: 67%;
+        height: 65%;
         width: 100%;
     }
     
     .modalClose {
         background-color: hsl(0, 0%, 0%, .0);
         box-sizing: border-box;
-        right: -5%;
+        right: -10%;
         z-index: 1;
         border-style: none;
         display: inline-block;
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: 1%;
+        top: -2%;
         width: 5%;
         font-size: 2vw;
         color: white;
@@ -685,8 +690,8 @@
     .movieInfoContainer {
         background-color: black;
         font-size: 20px;
-        height: 86vh;
-        min-height: 100%;
+        
+       
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -694,14 +699,14 @@
         justify-content: space-evenly;
     }
     
-    .posterContainer {
+    /* .posterContainer {
         background-color: black;
         height: 300px;
         width: 200px;
         color: white;
         margin:0.9%;
         margin-bottom: 50px;
-    }
+    } */
     
     .boxTitle {
         font-size: 20px;
@@ -718,7 +723,7 @@
     }
     
     .poster{
-        height: 100%;
+        
         width: 100%;
         background-size: cover;
         display: inline-block;
@@ -760,19 +765,21 @@
     
     .iframeContainer {
         position: relative;
+        padding-bottom: 56.25%;
         display: block;
-        width: 100%;
-        height: 100%;
+        /* width: 100%;
+        height: 100%; */
     }
     
     .youtubeIframe {
+        position: absolute;
         height: 100%;
         width: 100%;
     }
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 99%;
         width: 100%;
         right:-100%;
     }
@@ -871,14 +878,12 @@
     }
     .index-body {
         font-size: 0;
-        height: 190vh;
         width: 97vw;
         margin: 0;
         background-color:black;
     }
     .map-body{
         font-size: 0;
-        height: 100vh;
         width: 100vw;
         margin: 0;
         background-color:black;
@@ -887,7 +892,6 @@
     .fullContainer {
         font-size: 0;
         position: absolute;
-        height: 100%;
         width: 100%;
         display: inline-block;
         background-color: black;
@@ -911,7 +915,7 @@
         height:35%;
         position:absolute;
         left:40%;
-        top:3%;
+        top: 15px;
         display: inline-block;
         font-family: 'Oswald', sans-serif;
         font-weight: bold;
@@ -962,16 +966,16 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 85%;
+
         width: 100%;
         background-color: black;
     }
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        /* height: 195%; */
         width: 100%;
     }
     
@@ -979,11 +983,11 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
-        height: 90%;
-        top: 2.5%;
+        height: 850px;
+        top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -1085,14 +1089,14 @@
     .modalClose {
         background-color: hsl(0, 0%, 0%, .0);
         box-sizing: border-box;
-        right: -5%;
+        right: -12%;
         z-index: 1;
         border-style: none;
         display: inline-block;
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: 1%;
+        top: -3%;
         width: 5%;
         font-size: 2vw;
         color: white;
@@ -1101,7 +1105,7 @@
     .modalFooter {
         /* border: 1px solid white; */
         background-color: black;
-        display: inline-block;
+        display: none;
         top: 67%;
         position: absolute;
         height: 33%;
@@ -1111,8 +1115,7 @@
     .movieInfoContainer {
         background-color: black;
         font-size: 20px;
-        height: 86vh;
-        min-height: 100%;
+        
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -1144,7 +1147,7 @@
     }
     
     .poster{
-        height: 100%;
+        
         width: 100%;
         background-size: cover;
         display: inline-block;
@@ -1186,19 +1189,21 @@
     
     .iframeContainer {
         position: relative;
+        padding-bottom: 56.25%;
         display: block;
-        width: 100%;
-        height: 100%;
+        /* width: 100%;
+        height: 100%; */
     }
     
     .youtubeIframe {
+        position: absolute;
         height: 100%;
         width: 100%;
     }
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 99%;
         width: 100%;
         right:-100%;
     }
@@ -1286,14 +1291,14 @@
     
     .index-body {
         font-size: 0;
-        height: 190vh;
+
         width: 97vw;
         margin: 0;
         background-color:black;
     }
     .map-body{
         font-size: 0;
-        height: 100vh;
+        
         width: 100vw;
         margin: 0;
         background-color:black;
@@ -1302,7 +1307,7 @@
     .fullContainer {
         font-size: 0;
         position: absolute;
-        height: 100%;
+       
         width: 100%;
         display: inline-block;
         background-color: black;
@@ -1326,7 +1331,7 @@
         height:35%;
         position:absolute;
         left:40%;
-        top:3%;
+        top: 15px;
         display: inline-block;
         font-family: 'Oswald', sans-serif;
         font-weight: bold;
@@ -1375,16 +1380,15 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 85%;
         width: 100%;
         background-color: black;
     }
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        height: 200%;
         width: 100%;
     }
     
@@ -1392,11 +1396,11 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
-        height: 90%;
-        top: 2.5%;
+        height: 850px;
+        top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -1502,14 +1506,14 @@
     .modalClose {
         background-color: hsl(0, 0%, 0%, .0);
         box-sizing: border-box;
-        right: -5%;
+        right: -12%;
         z-index: 1;
         border-style: none;
         display: inline-block;
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: 1%;
+        top: -2%;
         width: 5%;
         font-size: 2vw;
         color: white;
@@ -1518,7 +1522,7 @@
     .modalFooter {
         /* border: 1px solid white; */
         background-color: black;
-        display: inline-block;
+        display: none;
         top: 67%;
         position: absolute;
         height: 33%;
@@ -1528,8 +1532,8 @@
     .movieInfoContainer {
         background-color: black;
         font-size: 20px;
-        height: 86vh;
-        min-height: 100%;
+    
+        
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -1561,7 +1565,7 @@
     }
     
     .poster{
-        height: 100%;
+        
         width: 100%;
         background-size: cover;
         display: inline-block;
@@ -1603,19 +1607,21 @@
     
     .iframeContainer {
         position: relative;
+        padding-bottom: 56.25%;
         display: block;
-        width: 100%;
-        height: 100%;
+        /* width: 100%;
+        height: 100%; */
     }
     
     .youtubeIframe {
+        position: absolute;
         height: 100%;
         width: 100%;
     }
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 99%;
         width: 100%;
         right:-100%;
     }
@@ -1694,6 +1700,7 @@
         }
     }
  } 
+ 
 
  @media only screen and (min-width: 1200px) {
 
@@ -1714,14 +1721,14 @@
     }
     .index-body {
         font-size: 0;
-        height: 190vh;
+        
         width: 97vw;
         margin: 0;
         background-color:black;
     }
     .map-body{
         font-size: 0;
-        height: 100vh;
+        
         width: 100vw;
         margin: 0;
         background-color:black;
@@ -1730,7 +1737,6 @@
     .fullContainer {
         font-size: 0;
         position: absolute;
-        height: 100%;
         width: 100%;
         display: inline-block;
         background-color: black;
@@ -1754,7 +1760,7 @@
         height:35%;
         position:absolute;
         left:40%;
-        top:3%;
+        top: 15px;
         display: inline-block;
         font-family: 'Oswald', sans-serif;
         font-weight: bold;
@@ -1806,16 +1812,16 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 85%;
+        
         width: 100%;
         background-color: black;
     }
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        /* height: 153%; */
         width: 100%;
     }
     
@@ -1823,11 +1829,11 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
-        top: 2.5%;
-        height: 93%;
+        top: 4.5%;
+        height: 850px;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -1926,14 +1932,14 @@
     .modalClose {
         background-color: hsl(0, 0%, 0%, .0);
         box-sizing: border-box;
-        right: -5%;
+        right: -12%;
         z-index: 1;
         border-style: none;
         display: inline-block;
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: 1%;
+        top: -1%;
         width: 5%;
         font-size: 2vw;
         color: white;
@@ -1952,8 +1958,8 @@
     .movieInfoContainer {
         background-color: black;
         font-size: 20px;
-        height: 86vh;
-        min-height: 100%;
+        
+        
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -1963,8 +1969,8 @@
     
     .posterContainer {
         background-color: black;
-        height: 48%;
-        width: 15%;
+        height: 300px;
+        width: 200px;
         color: white;
         margin:0.9%;
     }
@@ -1984,7 +1990,7 @@
     }
     
     .poster{
-        height: 100%;
+        
         width: 100%;
         background-size: cover;
         display: inline-block;
@@ -2026,19 +2032,21 @@
     
     .iframeContainer {
         position: relative;
+        padding-bottom: 56.25%;
         display: block;
-        width: 100%;
-        height: 100%;
+        /* width: 100%;
+        height: 100%; */
     }
     
     .youtubeIframe {
+        position: absolute;
         height: 100%;
         width: 100%;
     }
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 96%;
         width: 100%;
         right:-100%;
     }
@@ -2118,3 +2126,56 @@
     }
 
  } 
+ 
+ 
+ 
+ @media only screen and (min-width: 515px) {
+    .modalPageContainer {
+        height: 445%;
+    }
+ }
+
+ @media only screen and (min-width: 600px) {
+    .modalPageContainer {
+        height: 395%;
+    }
+ }
+
+ @media only screen and (min-width: 650px) {
+    .modalPageContainer {
+        height: 275%;
+    }
+    .posterContainer {
+        background-color: black;
+        height: 300px;
+        width: 200px;
+        color: white;
+        margin: 0.9%;
+        margin-bottom: 50px;
+    }
+ }
+ @media only screen and (min-width: 778px){
+    .modalPageContainer {
+        height: 280%;
+    }
+ }
+ @media only screen and (min-width: 877px){
+    .modalPageContainer {
+        height: 200%;
+    }
+ }
+ @media only screen and (min-width: 1113px) {
+    .modalPageContainer{
+        height:162%;
+    }
+ }
+ @media only screen and (min-width: 1200px){
+    .modalPageContainer {
+        height: 154%;
+    }
+ }
+ @media only screen and (min-width: 1615px) {
+    .modalPageContainer{
+        height:130%;
+    }
+}
