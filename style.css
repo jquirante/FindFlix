@@ -1,3 +1,6 @@
+.modalPageContainer{
+    height: 882%;
+}
 @media only screen and (max-width: 600px) {
 
     * {
@@ -108,9 +111,9 @@
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        /* height: 195%; */
         width: 100%;
     }
     
@@ -118,11 +121,11 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
         height: 850px;
-        top: 2.5%;
+        top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -347,7 +350,7 @@
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 99%;
         width: 100%;
         right:-100%;
     }
@@ -545,9 +548,9 @@
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        /* height: 195%; */
         width: 100%;
     }
     
@@ -555,11 +558,11 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
         height: 850px;
-        top: 2.5%;
+        top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -696,14 +699,14 @@
         justify-content: space-evenly;
     }
     
-    .posterContainer {
+    /* .posterContainer {
         background-color: black;
         height: 300px;
         width: 200px;
         color: white;
         margin:0.9%;
         margin-bottom: 50px;
-    }
+    } */
     
     .boxTitle {
         font-size: 20px;
@@ -776,7 +779,7 @@
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 99%;
         width: 100%;
         right:-100%;
     }
@@ -970,9 +973,9 @@
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        /* height: 195%; */
         width: 100%;
     }
     
@@ -980,11 +983,11 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
         height: 850px;
-        top: 2.5%;
+        top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -1200,7 +1203,7 @@
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 99%;
         width: 100%;
         right:-100%;
     }
@@ -1383,9 +1386,9 @@
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        height: 200%;
         width: 100%;
     }
     
@@ -1393,11 +1396,11 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
         height: 850px;
-        top: 2.5%;
+        top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -1618,7 +1621,7 @@
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 99%;
         width: 100%;
         right:-100%;
     }
@@ -1697,6 +1700,7 @@
         }
     }
  } 
+ 
 
  @media only screen and (min-width: 1200px) {
 
@@ -1815,9 +1819,9 @@
     
     .modalPageContainer {
         background-color: hsl(0, 0%, 0%, .4);
-        position: fixed;
+        position: absolute;
         display: none;
-        height: 100%;
+        /* height: 153%; */
         width: 100%;
     }
     
@@ -1825,10 +1829,10 @@
         border-radius: 2px;
         font-size: 0;
         background-color: black;
-        position: absolute;
+        position: fixed;
         display: inline-block;
         left: 10%;
-        top: 2.5%;
+        top: 4.5%;
         height: 850px;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -2042,7 +2046,7 @@
     
     .map-main-container {
         position:absolute;
-        height: 100%;
+        height: 96%;
         width: 100%;
         right:-100%;
     }
@@ -2122,3 +2126,56 @@
     }
 
  } 
+ 
+ 
+ 
+ @media only screen and (min-width: 515px) {
+    .modalPageContainer {
+        height: 445%;
+    }
+ }
+
+ @media only screen and (min-width: 600px) {
+    .modalPageContainer {
+        height: 395%;
+    }
+ }
+
+ @media only screen and (min-width: 650px) {
+    .modalPageContainer {
+        height: 275%;
+    }
+    .posterContainer {
+        background-color: black;
+        height: 300px;
+        width: 200px;
+        color: white;
+        margin: 0.9%;
+        margin-bottom: 50px;
+    }
+ }
+ @media only screen and (min-width: 778px){
+    .modalPageContainer {
+        height: 280%;
+    }
+ }
+ @media only screen and (min-width: 877px){
+    .modalPageContainer {
+        height: 200%;
+    }
+ }
+ @media only screen and (min-width: 1113px) {
+    .modalPageContainer{
+        height:162%;
+    }
+ }
+ @media only screen and (min-width: 1200px){
+    .modalPageContainer {
+        height: 154%;
+    }
+ }
+ @media only screen and (min-width: 1615px) {
+    .modalPageContainer{
+        height:130%;
+    }
+}
