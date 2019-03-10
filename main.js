@@ -15,6 +15,7 @@ function initializeApp() {
     $(".close-modal").click((event)=>{
         console.log(event);
         if($(event.target).hasClass("close-modal")) {
+            $("body").css('overflow', 'visible');
             $(".movieTitle").remove();
             $(".youtubeIframe").attr('src','');
             $(".modalFooter").empty();

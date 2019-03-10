@@ -124,7 +124,7 @@
         position: fixed;
         display: inline-block;
         left: 10%;
-        height: 850px;
+        height: 650px;
         top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -150,23 +150,22 @@
     } */
     
     .modalBody {
-        position: absolute;
+        position: relative;
         display: inline-block;
         vertical-align: top;
         font-size: 0;
         top: 0%;
-    
-        height: 50%;
+        
+        
         width: 100%;
     }
     
     .movieContent {
         border-radius: 2px;
-        position: absolute;
+        position: relative;
         display: inline-block;
         border: 1px solid black;
-        top: 45%;
-        height: 50%;
+        
         width: 100%;
     }
     
@@ -178,33 +177,32 @@
         position: relative;
         font-size: 25px;
         left: 10%;
-        top: 3%;
+        top: 8%;
         font-weight: bold;
         border: 1px solid black;
         display: inline-block;
-        height: 10%;
         width: 80%;
     }
     
     .movieDescription {
-        overflow-y: auto;
+        overflow-y: scroll;
         position: relative;
         display: inline-block;
-        top: 8%;
+        top: 15%;
         left: 10%;
         color: white;
         font-size: 12px;
         background-color: black;
-        height: 40%;
         width: 80%;
     }
     
     .findButtonContainer {
-        position: absolute;
+        position: relative;
         display: inline-block;
-        bottom: -5%;
+        margin-bottom: 20px;
+        top: 25px;
         left: 10%;
-        height: 30%;
+        height: 75px;
         width: 100%;
     }
     
@@ -221,14 +219,23 @@
     }
     
     .trailerContainer {
-        position: absolute;
+        position: relative;
         vertical-align: top;
         font-weight: bold;
         font-size: 0;
         border: 1px solid black;
-        display: block;
+        display: inline-block;
         top:0%;
-        height: 52%;
+        width: 100%;
+    }
+
+    .modalFooter {
+        /* border: 1px solid white; */
+        position: relative;
+        bottom: 0;
+        background-color: black;
+        display: inline-block;
+        height: 80px;
         width: 100%;
     }
     
@@ -242,21 +249,13 @@
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: -2%;
+        top: -5%;
         width: 5%;
         font-size: 2vw;
         color: white;
     }
     
-    .modalFooter {
-        /* border: 1px solid white; */
-        background-color: black;
-        display: inline-block;
-        top: 58%;
-        position: absolute;
-        height: 35%;
-        width: 100%;
-    }
+    
     
     .movieInfoContainer {
         background-color: black;
@@ -561,7 +560,7 @@
         position: fixed;
         display: inline-block;
         left: 10%;
-        height: 850px;
+        height: 650px;
         top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -577,23 +576,18 @@
     } */
     
     .modalBody {
-        position: absolute;
+        position: relative;
         display: inline-block;
         vertical-align: top;
         font-size: 0;
         top: 0%;
-        border: 1px solid black;
-        height: 60%;
         width: 100%;
     }
     
     .movieContent {
         border-radius: 2px;
-        position: absolute;
+        position: relative;
         display: inline-block;
-        border: 1px solid black;
-        top: 55%;
-        height: 36%;
         width: 100%;
     }
     
@@ -617,7 +611,7 @@
         overflow: auto;
         position: relative;
         display: inline-block;
-        top: 8%;
+        top: 12%;
         left: 10%;
         color: white;
         font-size: 12px;
@@ -627,11 +621,12 @@
     }
     
     .findButtonContainer {
-        position: absolute;
+        position: relative;
         display: inline-block;
-        bottom: 13%;
+        margin-bottom: 20px;
+        top: 25px;
         left: 10%;
-        height: 30%;
+        height: 70px;
         width: 100%;
     }
     
@@ -650,14 +645,23 @@
     }
     
     .trailerContainer {
-        position: absolute;
+        position: relative;
         vertical-align: top;
         font-weight: bold;
         font-size: 0;
         border: 1px solid black;
-        display: block;
+        display: inline-block;
         top:0%;
-        height: 65%;
+        width: 100%;
+    }
+    
+    .modalFooter {
+        /* border: 1px solid white; */
+        position: relative;
+        bottom: 0;
+        background-color: black;
+        display: inline-block;
+        height: 140px;
         width: 100%;
     }
     
@@ -671,21 +675,13 @@
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: -2%;
+        top: -5%;
         width: 5%;
         font-size: 2vw;
         color: white;
     }
     
-    .modalFooter {
-        /* border: 1px solid white; */
-        background-color: black;
-        display: inline-block;
-        top: 67%;
-        position: absolute;
-        height: 33%;
-        width: 100%;
-    }
+    
     
     .movieInfoContainer {
         background-color: black;
@@ -776,6 +772,8 @@
         height: 100%;
         width: 100%;
     }
+
+    
     
     .map-main-container {
         position:absolute;
@@ -986,7 +984,7 @@
         position: fixed;
         display: inline-block;
         left: 10%;
-        height: 850px;
+        height: 650px;
         top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -1002,23 +1000,18 @@
     } */
     
     .modalBody {
-        position: absolute;
+        position: relative;
         display: inline-block;
         vertical-align: top;
         font-size: 0;
         top: 0%;
-        border: 1px solid black;
-        height: 60%;
         width: 100%;
     }
     
     .movieContent {
         border-radius: 2px;
-        position: absolute;
+        position: relative;
         display: inline-block;
-        border: 1px solid black;
-        top: 64%;
-        height: 36%;
         width: 100%;
     }
     
@@ -1030,11 +1023,10 @@
         position: relative;
         font-size: 25px;
         left: 10%;
-        top: 3%;
+        margin-top: 25px;
         font-weight: bold;
         border: 1px solid black;
         display: inline-block;
-        height: 10%;
         width: 80%;
     }
     
@@ -1052,11 +1044,11 @@
     }
     
     .findButtonContainer {
-        position: absolute;
+        position: relative;
         display: inline-block;
-        bottom: 13%;
+        margin-bottom: 20px;
         left: 10%;
-        height: 30%;
+        height: 75px;
         width: 100%;
     }
     
@@ -1075,14 +1067,13 @@
     }
     
     .trailerContainer {
-        position: absolute;
+        position: relative;
         vertical-align: top;
         font-weight: bold;
         font-size: 0;
         border: 1px solid black;
         display: block;
         top:0%;
-        height: 67%;
         width: 100%;
     }
     
@@ -1096,7 +1087,7 @@
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: -3%;
+        top: -5%;
         width: 5%;
         font-size: 2vw;
         color: white;
@@ -1105,10 +1096,9 @@
     .modalFooter {
         /* border: 1px solid white; */
         background-color: black;
-        display: none;
-        top: 67%;
-        position: absolute;
-        height: 33%;
+        display: block;
+        position: relative;
+        height: 150px;
         width: 100%;
     }
     
@@ -1399,7 +1389,7 @@
         position: fixed;
         display: inline-block;
         left: 10%;
-        height: 850px;
+        height: 650px;
         top: 4.5%;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -1419,23 +1409,20 @@
         position:absolute;
     }
     .modalBody {
-        position: absolute;
+        position: relative;
         display: inline-block;
         vertical-align: top;
         font-size: 0;
         top: 0%;
-        border: 1px solid black;
-        height: 60%;
         width: 100%;
     }
     
     .movieContent {
         border-radius: 2px;
-        position: absolute;
+        position: relative;
         display: inline-block;
-        border: 1px solid black;
-        top: 64%;
-        height: 36%;
+        top: 0;
+        margin-top: 15px;
         width: 100%;
     }
     
@@ -1443,15 +1430,14 @@
         font-family: Arial, Helvetica, sans-serif;
         color: white;
         background-color: black;
-        border: 1px solid white;
+        margin-top: 50px;
         position: relative;
         font-size: 25px;
         left: 10%;
-        top: 3%;
+        
         font-weight: bold;
-        border: 1px solid black;
+        
         display: inline-block;
-        height: 10%;
         width: 80%;
     }
     
@@ -1469,14 +1455,13 @@
     }
     
     .findButtonContainer {
-        position: absolute;
+        position: relative;
         display: inline-block;
-        bottom: 13%;
+        margin-bottom: 20px;
         left: 10%;
-        height: 30%;
+        height: 75px;
         width: 100%;
     }
-    
     .findTickets {
         font-family: 'Oswald', sans-serif;
         position: relative;
@@ -1492,14 +1477,13 @@
     }
     
     .trailerContainer {
-        position: absolute;
+        position: relative;
         vertical-align: top;
         font-weight: bold;
         font-size: 0;
         border: 1px solid black;
         display: block;
         top:0%;
-        height: 67%;
         width: 100%;
     }
     
@@ -1513,7 +1497,7 @@
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: -2%;
+        top: -5%;
         width: 5%;
         font-size: 2vw;
         color: white;
@@ -1522,10 +1506,9 @@
     .modalFooter {
         /* border: 1px solid white; */
         background-color: black;
-        display: none;
-        top: 67%;
-        position: absolute;
-        height: 33%;
+        display: block;
+        position: relative;
+        height: 140px;
         width: 100%;
     }
     
@@ -1833,7 +1816,7 @@
         display: inline-block;
         left: 10%;
         top: 4.5%;
-        height: 850px;
+        height: 650px;
         width: 80%;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
@@ -1860,6 +1843,7 @@
     .movieContent {
         border-radius: 2px;
         position: relative;
+        margin-top: 0;
         display: inline-block;
         border: 1px solid black;
         top: 0%;
@@ -1873,13 +1857,13 @@
         background-color: black;
         border: 1px solid white;
         position: relative;
+        margin-top: 0;
         font-size: 1.65vw;
         left: 10%;
         top: 5%;
         font-weight: bold;
         border: 1px solid black;
         display: inline-block;
-        height: 10%;
         width: 80%;
     }
     
@@ -1887,21 +1871,21 @@
         overflow: auto;
         position: relative;
         display: inline-block;
+        margin-top: 0;
         top: 8%;
         left: 10%;
         color: white;
         font-size: 1vw;
         background-color: black;
-        height: 50%;
         width: 80%;
     }
     
     .findButtonContainer {
         position: relative;
         display: inline-block;
-        top: 15%;
+        top: 23%;
         left: 10%;
-        height: 19%;
+        height: 130px;
         width: 100%;
     }
     
@@ -1939,7 +1923,7 @@
         font-weight: normal;
         position: absolute;
         height: 7%;
-        top: -1%;
+        top: -5%;
         width: 5%;
         font-size: 2vw;
         color: white;
@@ -1949,8 +1933,8 @@
         /* border: 1px solid white; */
         background-color: black;
         display: inline-block;
+        top: 0;
         position: relative;
-        top: 70%;
         height: 30%;
         width: 100%;
     }
@@ -2127,55 +2111,3 @@
 
  } 
  
- 
- 
- @media only screen and (min-width: 515px) {
-    .modalPageContainer {
-        height: 445%;
-    }
- }
-
- @media only screen and (min-width: 600px) {
-    .modalPageContainer {
-        height: 395%;
-    }
- }
-
- @media only screen and (min-width: 650px) {
-    .modalPageContainer {
-        height: 275%;
-    }
-    .posterContainer {
-        background-color: black;
-        height: 300px;
-        width: 200px;
-        color: white;
-        margin: 0.9%;
-        margin-bottom: 50px;
-    }
- }
- @media only screen and (min-width: 778px){
-    .modalPageContainer {
-        height: 280%;
-    }
- }
- @media only screen and (min-width: 877px){
-    .modalPageContainer {
-        height: 200%;
-    }
- }
- @media only screen and (min-width: 1113px) {
-    .modalPageContainer{
-        height:162%;
-    }
- }
- @media only screen and (min-width: 1200px){
-    .modalPageContainer {
-        height: 154%;
-    }
- }
- @media only screen and (min-width: 1615px) {
-    .modalPageContainer{
-        height:130%;
-    }
-}
