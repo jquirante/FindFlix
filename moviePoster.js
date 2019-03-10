@@ -89,7 +89,7 @@ class MoviePosterService {
             };
 
             this.fillMovieInformation(title, description,movieId);
-    
+            $('body').css('overflow', 'hidden');
             $('.loading').css('display', 'inline-block');
 
             this.getActorInformation (movieId);
