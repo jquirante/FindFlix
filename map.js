@@ -4,7 +4,7 @@ var movieMap;
 function initializeMap() {
     movieMap = new MovieMap();
     $(".youtubeIframe").attr('src','');
-    movieMap.initMap();
+    // movieMap.initMap();
 }
 
 class MovieMap {
@@ -27,7 +27,7 @@ class MovieMap {
 
     initMap() {
         $('.loading').css('display', 'inline-block');
-        
+
         if (navigator.geolocation) {
            navigator.geolocation.getCurrentPosition(this.onGetLocation, this.getLocationError);
            
