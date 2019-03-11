@@ -28,6 +28,7 @@ function initializeApp() {
     
     $('.findTickets').click(function () {
         // initMap();
+        movieMap.initMap();
         $('.left-modal').animate({'left': '-100%' }, "slow");
         $(".map-main-container").animate({ "right": 0 }, "slow");
     });
