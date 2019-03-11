@@ -4,7 +4,7 @@ var movieMap;
 function initializeMap() {
     movieMap = new MovieMap();
     $(".youtubeIframe").attr('src','');
-    movieMap.initMap();
+    // movieMap.initMap();
 }
 
 class MovieMap {
@@ -27,35 +27,38 @@ class MovieMap {
 
     initMap() {
         $('.loading').css('display', 'inline-block');
-        var myLatlng = { lat: 33.63490, lng: -117.74047
-        };
+
+        if (navigator.geolocation) {
+           navigator.geolocation.getCurrentPosition(this.onGetLocation, this.getLocationError);
+           
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, this.infoWindow, map.getCenter());
+        }
+        // var myLatlng = { lat: 33.63490, lng: -117.74047
+        // };
         // var location;
         this.map = new google.maps.Map(document.getElementById('map'), {
-            center: myLatlng,
-            zoom: 12
+            center: undefined,
+            zoom: 10
         });
         console.log('1', this.map)
         this.infoWindow = new google.maps.InfoWindow;
         console.log(new google.maps.InfoWindow)
             // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.onGetLocation, this.getLocationError);
-        } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, this.infoWindow, map.getCenter());
-        }
+        
 
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: this.map,
-            title: 'Click to zoom'
-        });
+        // var marker = new google.maps.Marker({
+        //     position: pos,
+        //     map: this.map,
+        //     title: 'Click to zoom'
+        // });
 
-        this.map.addListener('center_changed', () => {
-            window.setTimeout(() => {
-                this.map.panTo(marker.getPosition());
-            }, 3000);
-        });
+        // this.map.addListener('center_changed', () => {
+        //     window.setTimeout(() => {
+        //         this.map.panTo(marker.getPosition());
+        //     }, 3000);
+        // });
     }
 
     onGetLocation(position) {
@@ -107,7 +110,9 @@ class MovieMap {
     createMarker(place) {
         var image;
         if (place.photos.length > 0) {
-            image = place.photos[0].getUrl({ 'maxWidth': 35, 'maxHeight': 35 });
+            // image = place.photos[0].getUrl({ 'maxWidth': 35, 'maxHeight': 35 });
+            image = 'images/marker.png'
+            console.log("IMAGE: ", image)
         } else {
             image = {
                 url: place.icon,

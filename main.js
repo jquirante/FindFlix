@@ -15,6 +15,7 @@ function initializeApp() {
     $(".close-modal").click((event)=>{
         console.log(event);
         if($(event.target).hasClass("close-modal")) {
+            $("body").css('overflow', 'visible');
             $(".movieTitle").remove();
             $(".youtubeIframe").attr('src','');
             $(".modalFooter").empty();
@@ -27,6 +28,7 @@ function initializeApp() {
     
     $('.findTickets').click(function () {
         // initMap();
+        movieMap.initMap();
         $('.left-modal').animate({'left': '-100%' }, "slow");
         $(".map-main-container").animate({ "right": 0 }, "slow");
     });
