@@ -1,6 +1,9 @@
 .modalPageContainer{
     height: 882%;
 }
+.modalContainer{
+    max-width: 1150px;
+}
 @media only screen and (max-width: 600px) {
 
     * {
@@ -127,6 +130,7 @@
         height: 650px;
         top: 4.5%;
         width: 80%;
+        max-width: 1200px;
         -webkit-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         -moz-box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.267);
         box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
