@@ -306,12 +306,23 @@
     }
     
     .poster:hover {
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         -moz-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
     }
+
+    .castMemberNameSpan {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        height: 100%;
+        width: 100%;
+    }
     
     .castMemberNameContainer {
+        text-overflow: ellipsis;
         position: absolute;
         top: 2%;
         font-size: 7px;
@@ -732,11 +743,22 @@
     }
     
     .poster:hover {
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         -moz-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
     }
     
+    
+    .castMemberNameSpan {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        height: 100%;
+        width: 100%;
+    }
+
     .castMemberNameContainer {
         position: absolute;
         top: 2%;
@@ -1150,9 +1172,19 @@
     }
     
     .poster:hover {
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         -moz-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
+    }
+
+    .castMemberNameSpan {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        height: 100%;
+        width: 100%;
     }
     
     .castMemberNameContainer {
@@ -1561,11 +1593,21 @@
     }
     
     .poster:hover {
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         -moz-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
     }
     
+    .castMemberNameSpan {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        height: 100%;
+        width: 100%;
+    }
+
     .castMemberNameContainer {
         position: absolute;
         top: 2%;
@@ -1991,18 +2033,29 @@
     }
     
     .poster:hover {
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         -moz-box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
         box-shadow: 0px 0px 10px 10px rgb(255, 255, 255, .4);
     }
     
+    .castMemberNameSpan {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        height: 100%;
+        width: 100%;
+    }
+
     .castMemberNameContainer {
+        text-overflow: ellipsis;
         position: absolute;
         top: 2%;
         font-size: 1vw;
         color: white;
         text-align: center;
-        height: 10%;
+        height: 25px;
         width: 100%;
     }
     

@@ -155,22 +155,31 @@ class MoviePosterService {
                 method: 'get',
                 async: false,
                 success: function (response) {
+                    
                     console.log('actorImages', response);
                     var castMemberName = movieCastArray[i].name;
 
-                    var castMemberName = $('<div>', {
+                    var castMemberNameHolder= $('<div>', {
                         class: "castMemberNameContainer",
-                        text: `${castMemberName}`
+                        
+                    });
+
+                    var castMemberNameSpan = $('<span>', {
+                        class: "castMemberNameSpan",
+                        text: `${castMemberName}`,
+                        title: `${castMemberName}`
                     });
 
                     var image = $('<img>', {
                         class: 'actorImage',
-                        src: `https://image.tmdb.org/t/p/w440_and_h660_bestv2/${response.profiles[0].file_path}`
+                        src: `https://image.tmdb.org/t/p/w440_and_h660_bestv2/${response.profiles[0].file_path}`,
+                        title: `${castMemberName}`
                     });
     
                     // $('.modalFooter').append(image);
                     castMemberContainer.append(image);
-                    castMemberContainer.append(castMemberName);
+                    castMemberNameHolder.append(castMemberNameSpan);
+                    castMemberContainer.append(castMemberNameHolder);
     
                 },
                 error: function (response) {
