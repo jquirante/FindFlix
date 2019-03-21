@@ -21,6 +21,8 @@ function initializeApp() {
             $(".modalFooter").empty();
             $(".left-modal").css({'left' : 0});
             $(".map-main-container").css({'right':'-100%'})
+            $("#pac-input").remove();
+            $("#map").remove();
             modal.hide();
         }
             
@@ -28,6 +30,19 @@ function initializeApp() {
     
     $('.findTickets').click(function () {
         // initMap();
+
+        var searchBarElement = $('<input>', {
+            id:"pac-input",
+            class:"controls",
+            type:"text",
+            placeholder:"Search for Theatres By Location"
+        })
+
+        var mapElement = $('<div>', {
+            id: 'map'
+        })
+
+        $('.map-container').append(searchBarElement, mapElement);
         movieMap.initMap();
         $('.left-modal').animate({'left': '-100%' }, "slow");
         $(".map-main-container").animate({ "right": 0 }, "slow");
