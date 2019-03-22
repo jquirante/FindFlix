@@ -53,10 +53,6 @@ function initializeApp() {
 
 function updateUrl(movieInfo) {
     console.log('update url');
-
-    let stateObj = {
-        movieId: movieInfo,
-    };
     
     window.history.pushState({}, '', `?movieId=${movieInfo}`);
 }

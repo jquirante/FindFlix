@@ -3,7 +3,10 @@ $(document).ready(init);
 function init() {
     let moviePosterService = new MoviePosterService;
     moviePosterService.getMoviePosters();
-    //if(?) moviePosterService.getQueriedMovie();
+    var query = window.location.search;
+    var params = new URLSearchParams(query);
+    console.log(params.get('movieId'));
+    if(params.has('movieId')) moviePosterService.getQueriedMovie(params.get('movieId'));
 }
 
 class MoviePosterService {
@@ -14,6 +17,7 @@ class MoviePosterService {
         this.fillMovieInformation = this.fillMovieInformation.bind(this);
         this.getActorInformation = this.getActorInformation.bind(this);
         this.getQueriedMovie = this.getQueriedMovie.bind(this);
+        this.handleModalShow = this.handleModalShow.bind(this);
         // this.renderAllMoviePosters = this.renderAllMoviePosters.bind(this);
     }
 
@@ -46,7 +50,7 @@ class MoviePosterService {
                 var title = response.title;
                 var movieId = response.id;
                 var description = response.overview;
-                handleModalShow();
+                this.handleModalShow(movieId, title, description);
             },
             error: function () {
                 console.log('error');
@@ -65,7 +69,7 @@ class MoviePosterService {
         var poster = movie.poster_path;
         // var this = this;
 
-        handleModalShow = handleModalShow.bind(this);
+        
 
         var posterContainer =  $("<div>",{
             'class': 'posterContainer'
@@ -86,7 +90,7 @@ class MoviePosterService {
                 description,
                 poster
             },
-            click: handleModalShow
+            click: ()=>this.handleModalShow(movieId, title, description)
         });
 
         // var details = $("<div>",{
@@ -98,27 +102,21 @@ class MoviePosterService {
         posterContainer.append(image);
         $('.movieInfoContainer').append(posterContainer);
 
-        function handleModalShow() {
-            // updateUrl(movieId);
-            // var movieInfo = {
-            //     title,
-            //     movieId,
-            //     ratings,
-            //     description,
-            //     poster
-            // };
+        
+    }
+    handleModalShow( movieId, title, description ) {
+        updateUrl(movieId);
 
-            this.fillMovieInformation(title, description,movieId);
-            $('body').css('overflow', 'hidden');
-            $('.loading').css('display', 'inline-block');
+        this.fillMovieInformation(title, description,movieId);
+        $('body').css('overflow', 'hidden');
+        $('.loading').css('display', 'inline-block');
 
-            this.getActorInformation (movieId);
-            getVideos (title);
+        this.getActorInformation (movieId);
+        getVideos (title);
 
-            
-            $(".modalPageContainer").css('display', 'block');
+        
+        $(".modalPageContainer").css('display', 'block');
 
-        }
     }
     fillMovieInformation (title, description, movieId) {
         console.log('title', title);
