@@ -80,7 +80,7 @@ class MoviePosterService {
         $('.movieInfoContainer').append(posterContainer);
 
         function handleModalShow() {
-            updateUrl(title);
+            updateUrl(movieId);
             var movieInfo = {
                 title,
                 movieId,

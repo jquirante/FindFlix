@@ -52,14 +52,14 @@ function initializeApp() {
 }
 
 function updateUrl(movieInfo) {
-    
+    debugger;
     console.log('update url');
 
     let stateObj = {
         movieId: movieInfo,
     };
     
-    window.history.pushState(stateObj,`${movieInfo}`,`${movieInfo}.html`);
+    window.history.pushState(stateObj,`${movieInfo}`,`${movieInfo}`);
 }
 // function getDataFromServer() {
 //     console.log('hi');
