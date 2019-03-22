@@ -47,8 +47,20 @@ function initializeApp() {
         $('.left-modal').animate({'left': '-100%' }, "slow");
         $(".map-main-container").animate({ "right": 0 }, "slow");
     });
+
+
 }
 
+function updateUrl(movieInfo) {
+    
+    console.log('update url');
+
+    let stateObj = {
+        movieId: movieInfo,
+    };
+    
+    window.history.pushState(stateObj,`${movieInfo}`,`${movieInfo}.html`);
+}
 // function getDataFromServer() {
 //     console.log('hi');
 //     var settings = {
