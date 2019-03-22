@@ -3,9 +3,9 @@ $(document).ready(init);
 function init() {
     let moviePosterService = new MoviePosterService;
     moviePosterService.getMoviePosters();
+
     var query = window.location.search;
     var params = new URLSearchParams(query);
-    console.log(params.get('movieId'));
     if(params.has('movieId')) moviePosterService.getQueriedMovie(params.get('movieId'));
 }
 
@@ -162,16 +162,20 @@ class MoviePosterService {
         console.log('movieCastArray', movieCastArray);
         for (var i = 0; i < 5; i++) {
             var castMember = movieCastArray[i].id;
+
+            retrieveActorPicture(castMember);
+        }
+
+        function retrieveActorPicture(castMember) {
             
             var castMemberContainer = $('<div>', {
                 class: "castMemberContainer",
             });
-    
             var settings = {
                 url: `https://api.themoviedb.org/3/person/${castMember}/images?api_key=fb2158f8324ad535f0c817ef2fb98040`,
                 dataType: 'json',
                 method: 'get',
-                async: false,
+                // async: false,
                 success: function (response) {
                     
                     console.log('actorImages', response);
@@ -179,7 +183,7 @@ class MoviePosterService {
 
                     var castMemberNameHolder= $('<div>', {
                         class: "castMemberNameContainer",
-                        
+                    
                     });
 
                     var castMemberNameSpan = $('<span>', {
@@ -203,6 +207,7 @@ class MoviePosterService {
                 error: function (response) {
                     console.log('error');
                 }
+                
             };
             $.ajax(settings);
             $('.modalFooter').append(castMemberContainer);
