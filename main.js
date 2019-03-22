@@ -52,7 +52,6 @@ function initializeApp() {
 }
 
 function updateUrl(movieInfo) {
-    debugger;
     console.log('update url');
 
     let stateObj = {
