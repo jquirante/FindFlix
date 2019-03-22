@@ -58,7 +58,7 @@ function updateUrl(movieInfo) {
         movieId: movieInfo,
     };
     
-    window.history.pushState({}, '', '?movieId=');
+    window.history.pushState({}, '', `?movieId=${movieInfo}`);
 }
 // function getDataFromServer() {
 //     console.log('hi');
