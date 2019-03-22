@@ -3,6 +3,7 @@ $(document).ready(init);
 function init() {
     let moviePosterService = new MoviePosterService;
     moviePosterService.getMoviePosters();
+    //if(?) moviePosterService.getQueriedMovie();
 }
 
 class MoviePosterService {
@@ -12,6 +13,7 @@ class MoviePosterService {
         this.renderAllMoviePosters = this.renderAllMoviePosters.bind(this);
         this.fillMovieInformation = this.fillMovieInformation.bind(this);
         this.getActorInformation = this.getActorInformation.bind(this);
+        this.getQueriedMovie = this.getQueriedMovie.bind(this);
         // this.renderAllMoviePosters = this.renderAllMoviePosters.bind(this);
     }
 
@@ -35,7 +37,24 @@ class MoviePosterService {
             this.buildMoviePoster(movie);
         }
     }
-
+    getQueriedMovie(movieId){
+        var ajaxOptionsGetQueriedMovie = {
+            url: `https://api.themoviedb.org/3/movie/${movieId}?api_key=fb2158f8324ad535f0c817ef2fb98040`,
+            dataType: 'json',
+            success: (response) => {
+                //showmodal
+                var title = response.title;
+                var movieId = response.id;
+                var description = response.overview;
+                handleModalShow();
+            },
+            error: function () {
+                console.log('error');
+            }
+        };
+        $.ajax(ajaxOptionsGetQueriedMovie);
+    }
+    
     
 
     buildMoviePoster(movie) {
@@ -80,14 +99,14 @@ class MoviePosterService {
         $('.movieInfoContainer').append(posterContainer);
 
         function handleModalShow() {
-            updateUrl(movieId);
-            var movieInfo = {
-                title,
-                movieId,
-                ratings,
-                description,
-                poster
-            };
+            // updateUrl(movieId);
+            // var movieInfo = {
+            //     title,
+            //     movieId,
+            //     ratings,
+            //     description,
+            //     poster
+            // };
 
             this.fillMovieInformation(title, description,movieId);
             $('body').css('overflow', 'hidden');
