@@ -119,8 +119,6 @@ class MoviePosterService {
 
     }
     fillMovieInformation (title, description, movieId) {
-        console.log('title', title);
-        console.log('description', description);
 
         var movieTitleContainer = $('<div>', {
             class: 'movieTitle',
@@ -132,23 +130,19 @@ class MoviePosterService {
 
         $('.movieContent').prepend(movieTitleContainer);
 
-        console.log($('.movieTitle').text());
+        
         $('.movieDescription').text(description);
-        console.log($('.movieDescription').text());
     
     
     }
    
     getActorInformation(movieId) {
-        // console.log('getactor', movieArray);
-        // var movieId = movieArray[0].id;
-        
+
         var settings = {
             url: `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=fb2158f8324ad535f0c817ef2fb98040`,
             dataType: 'json',
             method: 'get',
             success: (response) => {
-                console.log('getActorSuccess', response);
                 this.getActorPictures(response.cast);
     
             },
@@ -159,7 +153,6 @@ class MoviePosterService {
         $.ajax(settings);
     }
     getActorPictures(movieCastArray) {
-        console.log('movieCastArray', movieCastArray);
         for (var i = 0; i < 5; i++) {
             var castMember = movieCastArray[i].id;
 
@@ -178,7 +171,6 @@ class MoviePosterService {
                 // async: false,
                 success: function (response) {
                     
-                    console.log('actorImages', response);
                     var castMemberName = movieCastArray[i].name;
 
                     var castMemberNameHolder= $('<div>', {

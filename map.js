@@ -22,6 +22,8 @@ class MovieMap {
         this.getLocationError = this.getLocationError.bind(this);
         this.createMarker = this.createMarker.bind(this);
         this.mapInitializedCallback = this.mapInitializedCallback.bind(this);
+        this.deleteMarkers = this.deleteMarkers.bind(this);
+        this.clearMarkers = this.clearMarkers.bind(this);
 
         // this.initMap();
     }
@@ -76,12 +78,14 @@ class MovieMap {
             var places = searchBox.getPlaces();
            
             
-            console.log('PLACES: ', places);
+        
             if (places.length == 0) {
               return;
             }
-            console.log('MARKERS: ', markers);
+            
             // Clear out the old markers.
+            // this.deleteMarkers();
+            debugger;
             markers.forEach(function(marker) {
               marker.setMap(null);
             });
@@ -102,7 +106,6 @@ class MovieMap {
                 scaledSize: new google.maps.Size(25, 25)
               };
               
-              console.log('MARKERS 2: ', markers);
             
               // Create a marker for each place.
               markers.push(new google.maps.Marker({
@@ -129,7 +132,7 @@ class MovieMap {
     }
 
     onGetLocation(position) {
-    
+        
         var pos = {
             lat: position.lat(),
             lng: position.lng()
@@ -143,14 +146,9 @@ class MovieMap {
     
         var request = {
             location: pos,
-            radius: '50000',
+            radius: '10000',
             type: ['movie_theater']
         };
-
-        // var request = {
-        //     query: 'Museum of Contemporary Art Australia',
-        //     fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry'],
-        // };
 
         this.service = new google.maps.places.PlacesService(this.map);
         this.service.nearbySearch(request, this.mapInitializedCallback);
@@ -159,7 +157,6 @@ class MovieMap {
         handleLocationError(true, this.infoWindow, this.map.getCenter());
     }
     mapInitializedCallback(results, status) {
-        console.log(results, status)
         if (status == google.maps.places.PlacesServiceStatus.OK) {
             for (var i = 0; i < results.length; i++) {
                 var place = results[i];
@@ -182,7 +179,6 @@ class MovieMap {
         if (place.photos.length > 0) {
             // image = place.photos[0].getUrl({ 'maxWidth': 35, 'maxHeight': 35 });
             image = 'images/marker.png'
-            console.log("IMAGE: ", image)
         } else {
             image = {
                 url: place.icon,
@@ -204,6 +200,15 @@ class MovieMap {
             this.directionsDisplay.setMap(this.map);
             this.calcRoute(place.geometry.location, place.name);
         });
+    }
+
+    clearMarkers() {
+        setMapOnAll(null);
+    }
+
+    deleteMarkers() {
+        this.clearMarkers();
+        markers = [];
     }
 
     calcRoute(destination, destinationName) {
