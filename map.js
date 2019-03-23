@@ -179,7 +179,6 @@ class MovieMap {
         if (place.photos.length > 0) {
             // image = place.photos[0].getUrl({ 'maxWidth': 35, 'maxHeight': 35 });
             image = 'images/marker.png'
-            console.log("IMAGE: ", image)
         } else {
             image = {
                 url: place.icon,
