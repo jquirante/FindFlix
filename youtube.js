@@ -19,7 +19,7 @@ getVideos = function (query, maxResult = 1) {
         },
         error: err => console.log(err),
         success: result => {
-            console.log(result);
+           
             $('.loading').css('display', 'none');
             renderTrailorInModal(result.items[0].id.videoId)
             // if (result.items) {
