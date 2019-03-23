@@ -24,6 +24,7 @@ function initializeApp() {
             $("#pac-input").remove();
             $("#map").remove();
             modal.hide();
+            updateUrl();
         }
             
     })
@@ -52,13 +53,11 @@ function initializeApp() {
 }
 
 function updateUrl(movieInfo) {
-    console.log('update url');
-
-    let stateObj = {
-        movieId: movieInfo,
-    };
-    
-    window.history.pushState(stateObj,`${movieInfo}`,`${movieInfo}`);
+    if (!movieInfo){
+        window.history.replaceState({},'',location.pathname);
+    }else{
+    window.history.replaceState({}, '', `?movieId=${movieInfo}`);
+    }
 }
 // function getDataFromServer() {
 //     console.log('hi');
