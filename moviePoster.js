@@ -3,6 +3,10 @@ $(document).ready(init);
 function init() {
     let moviePosterService = new MoviePosterService;
     moviePosterService.getMoviePosters();
+
+    var query = window.location.search;
+    var params = new URLSearchParams(query);
+    if(params.has('movieId')) moviePosterService.getQueriedMovie(params.get('movieId'));
 }
 
 class MoviePosterService {
@@ -12,6 +16,8 @@ class MoviePosterService {
         this.renderAllMoviePosters = this.renderAllMoviePosters.bind(this);
         this.fillMovieInformation = this.fillMovieInformation.bind(this);
         this.getActorInformation = this.getActorInformation.bind(this);
+        this.getQueriedMovie = this.getQueriedMovie.bind(this);
+        this.handleModalShow = this.handleModalShow.bind(this);
         // this.renderAllMoviePosters = this.renderAllMoviePosters.bind(this);
     }
 
@@ -35,7 +41,24 @@ class MoviePosterService {
             this.buildMoviePoster(movie);
         }
     }
-
+    getQueriedMovie(movieId){
+        var ajaxOptionsGetQueriedMovie = {
+            url: `https://api.themoviedb.org/3/movie/${movieId}?api_key=fb2158f8324ad535f0c817ef2fb98040`,
+            dataType: 'json',
+            success: (response) => {
+                //showmodal
+                var title = response.title;
+                var movieId = response.id;
+                var description = response.overview;
+                this.handleModalShow(movieId, title, description);
+            },
+            error: function () {
+                console.log('error');
+            }
+        };
+        $.ajax(ajaxOptionsGetQueriedMovie);
+    }
+    
     
 
     buildMoviePoster(movie) {
@@ -46,7 +69,7 @@ class MoviePosterService {
         var poster = movie.poster_path;
         // var this = this;
 
-        handleModalShow = handleModalShow.bind(this);
+        
 
         var posterContainer =  $("<div>",{
             'class': 'posterContainer'
@@ -67,7 +90,7 @@ class MoviePosterService {
                 description,
                 poster
             },
-            click: handleModalShow
+            click: ()=>this.handleModalShow(movieId, title, description)
         });
 
         // var details = $("<div>",{
@@ -79,26 +102,21 @@ class MoviePosterService {
         posterContainer.append(image);
         $('.movieInfoContainer').append(posterContainer);
 
-        function handleModalShow() {
-            var movieInfo = {
-                title,
-                movieId,
-                ratings,
-                description,
-                poster
-            };
+        
+    }
+    handleModalShow( movieId, title, description ) {
+        updateUrl(movieId);
 
-            this.fillMovieInformation(title, description,movieId);
-            $('body').css('overflow', 'hidden');
-            $('.loading').css('display', 'inline-block');
+        this.fillMovieInformation(title, description,movieId);
+        $('body').css('overflow', 'hidden');
+        $('.loading').css('display', 'inline-block');
 
-            this.getActorInformation (movieId);
-            getVideos (title);
+        this.getActorInformation (movieId);
+        getVideos (title);
 
-            
-            $(".modalPageContainer").css('display', 'block');
+        
+        $(".modalPageContainer").css('display', 'block');
 
-        }
     }
     fillMovieInformation (title, description, movieId) {
         console.log('title', title);
@@ -144,38 +162,52 @@ class MoviePosterService {
         console.log('movieCastArray', movieCastArray);
         for (var i = 0; i < 5; i++) {
             var castMember = movieCastArray[i].id;
+
+            retrieveActorPicture(castMember);
+        }
+
+        function retrieveActorPicture(castMember) {
             
             var castMemberContainer = $('<div>', {
                 class: "castMemberContainer",
             });
-    
             var settings = {
                 url: `https://api.themoviedb.org/3/person/${castMember}/images?api_key=fb2158f8324ad535f0c817ef2fb98040`,
                 dataType: 'json',
                 method: 'get',
-                async: false,
+                // async: false,
                 success: function (response) {
+                    
                     console.log('actorImages', response);
                     var castMemberName = movieCastArray[i].name;
 
-                    var castMemberName = $('<div>', {
+                    var castMemberNameHolder= $('<div>', {
                         class: "castMemberNameContainer",
-                        text: `${castMemberName}`
+                    
+                    });
+
+                    var castMemberNameSpan = $('<span>', {
+                        class: "castMemberNameSpan",
+                        text: `${castMemberName}`,
+                        title: `${castMemberName}`
                     });
 
                     var image = $('<img>', {
                         class: 'actorImage',
-                        src: `https://image.tmdb.org/t/p/w440_and_h660_bestv2/${response.profiles[0].file_path}`
+                        src: `https://image.tmdb.org/t/p/w440_and_h660_bestv2/${response.profiles[0].file_path}`,
+                        title: `${castMemberName}`
                     });
     
                     // $('.modalFooter').append(image);
                     castMemberContainer.append(image);
-                    castMemberContainer.append(castMemberName);
+                    castMemberNameHolder.append(castMemberNameSpan);
+                    castMemberContainer.append(castMemberNameHolder);
     
                 },
                 error: function (response) {
                     console.log('error');
                 }
+                
             };
             $.ajax(settings);
             $('.modalFooter').append(castMemberContainer);
