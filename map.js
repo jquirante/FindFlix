@@ -22,9 +22,7 @@ class MovieMap {
         this.getLocationError = this.getLocationError.bind(this);
         this.createMarker = this.createMarker.bind(this);
         this.mapInitializedCallback = this.mapInitializedCallback.bind(this);
-        this.deleteMarkers = this.deleteMarkers.bind(this);
-        this.clearMarkers = this.clearMarkers.bind(this);
-
+        this.markersArray = [];
         // this.initMap();
     }
 
@@ -75,6 +73,7 @@ class MovieMap {
           // more details for that place.
           
           searchBox.addListener('places_changed', () => {
+            this.deleteMarkers();
             var places = searchBox.getPlaces();
            
             
@@ -119,13 +118,13 @@ class MovieMap {
             
               if (place.geometry.viewport) {
                 // Only geocodes have viewport.
-                bounds.union(place.geometry.viewport);
+                this.bounds.union(place.geometry.viewport);
               } else {
-                bounds.extend(place.geometry.location);
+                this.bounds.extend(place.geometry.location);
                 
               }
             });
-            map.fitBounds(bounds);
+            map.fitBounds(this.bounds);
           });
 
         
@@ -146,7 +145,7 @@ class MovieMap {
     
         var request = {
             location: pos,
-            radius: '10000',
+            radius: '25000',
             type: ['movie_theater']
         };
 
@@ -161,6 +160,7 @@ class MovieMap {
             for (var i = 0; i < results.length; i++) {
                 var place = results[i];
                 this.createMarker(place);
+            
             }
         } else { console.log('failed') }
     }
@@ -196,6 +196,7 @@ class MovieMap {
             map: this.map
         });
 
+        this.markersArray.push(marker);
         marker.addListener('click', () => {
             this.directionsDisplay.setMap(this.map);
             this.calcRoute(place.geometry.location, place.name);
@@ -247,4 +248,11 @@ class MovieMap {
         infoWindow.open(map);
     }
 
+    deleteMarkers() {
+        //Loop through all the markers and remove
+        for (var i = 0; i < this.markersArray.length; i++) {
+            this.markersArray[i].setMap(null);
+        }
+        this.markersArray = [];
+    };
 }
