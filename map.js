@@ -10,7 +10,7 @@ function initializeMap() {
 class MovieMap {
     constructor() {
         this.bounds;
-        this.map;
+        this.map='';
         this.service;
         this.infoWindow;
         this.selectedTheaterinfoWindow = new google.maps.InfoWindow();
@@ -81,13 +81,6 @@ class MovieMap {
               return;
             }
             
-            // Clear out the old markers.
-            
-            markers.forEach(function(marker) {
-              marker.setMap(null);
-            });
-            markers = [];
-  
             // For each place, get the icon, name and location.
             this.bounds = new google.maps.LatLngBounds();
             places.forEach(function(place) {
@@ -104,13 +97,13 @@ class MovieMap {
               };
               
             
-              // Create a marker for each place.
-              markers.push(new google.maps.Marker({
-                map: map,
-                icon: icon,
-                title: place.name,
-                position: place.geometry.location
-              }));
+            //   Create a marker for each place.
+            //   markers.push(new google.maps.Marker({
+            //     map: map,
+            //     icon: icon,
+            //     title: place.name,
+            //     position: place.geometry.location
+            //   }));
 
               movieMap.onGetLocation(place.geometry.location);
             
@@ -174,9 +167,10 @@ class MovieMap {
     }
     createMarker(place) {
         var image;
+        
         if (place.photos.length > 0) {
             // image = place.photos[0].getUrl({ 'maxWidth': 35, 'maxHeight': 35 });
-            image = 'images/marker.png'
+            image = 'images/marker.png';
         } else {
             image = {
                 url: place.icon,
@@ -201,14 +195,6 @@ class MovieMap {
         });
     }
 
-    clearMarkers() {
-        setMapOnAll(null);
-    }
-
-    deleteMarkers() {
-        this.clearMarkers();
-        markers = [];
-    }
 
     clearRoutes() {
         this.directionsDisplay.set('directions', null);
