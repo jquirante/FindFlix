@@ -51,7 +51,7 @@ class MovieMap {
 
         this.map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 34.052234, lng: -118.243685},
-            zoom: 9,
+            zoom: 11,
             mapTypeId: 'roadmap'
           });
         
@@ -74,17 +74,15 @@ class MovieMap {
           
           searchBox.addListener('places_changed', () => {
             this.deleteMarkers();
+            this.clearRoutes();
             var places = searchBox.getPlaces();
            
-            
-        
             if (places.length == 0) {
               return;
             }
             
             // Clear out the old markers.
-            // this.deleteMarkers();
-            debugger;
+            
             markers.forEach(function(marker) {
               marker.setMap(null);
             });
@@ -116,15 +114,15 @@ class MovieMap {
 
               movieMap.onGetLocation(place.geometry.location);
             
-              if (place.geometry.viewport) {
-                // Only geocodes have viewport.
-                this.bounds.union(place.geometry.viewport);
-              } else {
-                this.bounds.extend(place.geometry.location);
+            //   if (place.geometry.viewport) {
+            //     // Only geocodes have viewport.
+            //     this.bounds.union(place.geometry.viewport);
+            //   } else {
+            //     this.bounds.extend(place.geometry.location);
                 
-              }
+            //   }
             });
-            map.fitBounds(this.bounds);
+            // map.fitBounds(this.bounds);
           });
 
         
@@ -210,6 +208,13 @@ class MovieMap {
     deleteMarkers() {
         this.clearMarkers();
         markers = [];
+    }
+
+    clearRoutes() {
+        this.directionsDisplay.set('directions', null);
+        this.selectedTheaterinfoWindow.setPosition(null);
+        this.selectedTheaterinfoWindow.setContent(null);
+        
     }
 
     calcRoute(destination, destinationName) {
