@@ -10,7 +10,7 @@ function initializeMap() {
 class MovieMap {
     constructor() {
         this.bounds;
-        this.map;
+        this.map='';
         this.service;
         this.infoWindow;
         this.selectedTheaterinfoWindow = new google.maps.InfoWindow();
@@ -22,7 +22,7 @@ class MovieMap {
         this.getLocationError = this.getLocationError.bind(this);
         this.createMarker = this.createMarker.bind(this);
         this.mapInitializedCallback = this.mapInitializedCallback.bind(this);
-
+        this.markersArray = [];
         // this.initMap();
     }
 
@@ -51,7 +51,7 @@ class MovieMap {
 
         this.map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 34.052234, lng: -118.243685},
-            zoom: 9,
+            zoom: 11,
             mapTypeId: 'roadmap'
           });
         
@@ -73,20 +73,14 @@ class MovieMap {
           // more details for that place.
           
           searchBox.addListener('places_changed', () => {
+            this.deleteMarkers();
+            this.clearRoutes();
             var places = searchBox.getPlaces();
            
-            
-            console.log('PLACES: ', places);
             if (places.length == 0) {
               return;
             }
-            console.log('MARKERS: ', markers);
-            // Clear out the old markers.
-            markers.forEach(function(marker) {
-              marker.setMap(null);
-            });
-            markers = [];
-  
+            
             // For each place, get the icon, name and location.
             this.bounds = new google.maps.LatLngBounds();
             places.forEach(function(place) {
@@ -102,34 +96,33 @@ class MovieMap {
                 scaledSize: new google.maps.Size(25, 25)
               };
               
-              console.log('MARKERS 2: ', markers);
             
-              // Create a marker for each place.
-              markers.push(new google.maps.Marker({
-                map: map,
-                icon: icon,
-                title: place.name,
-                position: place.geometry.location
-              }));
+            //   Create a marker for each place.
+            //   markers.push(new google.maps.Marker({
+            //     map: map,
+            //     icon: icon,
+            //     title: place.name,
+            //     position: place.geometry.location
+            //   }));
 
               movieMap.onGetLocation(place.geometry.location);
             
-              if (place.geometry.viewport) {
-                // Only geocodes have viewport.
-                bounds.union(place.geometry.viewport);
-              } else {
-                bounds.extend(place.geometry.location);
+            //   if (place.geometry.viewport) {
+            //     // Only geocodes have viewport.
+            //     this.bounds.union(place.geometry.viewport);
+            //   } else {
+            //     this.bounds.extend(place.geometry.location);
                 
-              }
+            //   }
             });
-            map.fitBounds(bounds);
+            // map.fitBounds(this.bounds);
           });
 
         
     }
 
     onGetLocation(position) {
-    
+        
         var pos = {
             lat: position.lat(),
             lng: position.lng()
@@ -143,14 +136,9 @@ class MovieMap {
     
         var request = {
             location: pos,
-            radius: '50000',
+            radius: '25000',
             type: ['movie_theater']
         };
-
-        // var request = {
-        //     query: 'Museum of Contemporary Art Australia',
-        //     fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry'],
-        // };
 
         this.service = new google.maps.places.PlacesService(this.map);
         this.service.nearbySearch(request, this.mapInitializedCallback);
@@ -159,11 +147,11 @@ class MovieMap {
         handleLocationError(true, this.infoWindow, this.map.getCenter());
     }
     mapInitializedCallback(results, status) {
-        console.log(results, status)
         if (status == google.maps.places.PlacesServiceStatus.OK) {
             for (var i = 0; i < results.length; i++) {
                 var place = results[i];
                 this.createMarker(place);
+            
             }
         } else { console.log('failed') }
     }
@@ -179,10 +167,10 @@ class MovieMap {
     }
     createMarker(place) {
         var image;
+        
         if (place.photos.length > 0) {
             // image = place.photos[0].getUrl({ 'maxWidth': 35, 'maxHeight': 35 });
-            image = 'images/marker.png'
-            console.log("IMAGE: ", image)
+            image = 'images/marker.png';
         } else {
             image = {
                 url: place.icon,
@@ -200,10 +188,19 @@ class MovieMap {
             map: this.map
         });
 
+        this.markersArray.push(marker);
         marker.addListener('click', () => {
             this.directionsDisplay.setMap(this.map);
             this.calcRoute(place.geometry.location, place.name);
         });
+    }
+
+
+    clearRoutes() {
+        this.directionsDisplay.set('directions', null);
+        this.selectedTheaterinfoWindow.setPosition(null);
+        this.selectedTheaterinfoWindow.setContent(null);
+        
     }
 
     calcRoute(destination, destinationName) {
@@ -242,4 +239,11 @@ class MovieMap {
         infoWindow.open(map);
     }
 
+    deleteMarkers() {
+        //Loop through all the markers and remove
+        for (var i = 0; i < this.markersArray.length; i++) {
+            this.markersArray[i].setMap(null);
+        }
+        this.markersArray = [];
+    };
 }
