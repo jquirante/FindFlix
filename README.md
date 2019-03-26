@@ -1,45 +1,15 @@
-# c1018_hackathon2
+# FindFlix
 
-Hackathon project involving the combination of different data sources into an application or game
+> An application that allows helps users watch movie trailers and find movie tickets. Built with HTML, CSS, JavaScript, Youtube, The Movie Database, and Google Maps APIs.
 
-### Requirements
-- Combine at least 4 **external** resources via AJAX requests and present their information in an application
-- Must be documented loosely on JSDOC standards
-- All API interactions must be encapsulated in an OOP object defined with a class.
-  - must use class
-  - must have methods to access the data
-  - must pass data to subsequent functions with callbacks upon getting their data
-  
-- Must be issue-managed via meistertask 
-  - name your project 10.18 Team [your team number] Hackathon
+### Setup Instructions
 
-### Judging Criteria
-- **Appeal** : is it visually appealing / well put together
-- **Code Quality** : is the code properly formatted, are variables and functions well defined and documented
-- **Presentation** : How well is it presented during the unveiling session
-- **Task / Issue Management** : How well was the development process documented / controlled.  Were there well-defined issues, milestones, and project management
-- **Innovative / Transformative** : Did the project do something new and exciting?  Was it bold and tried to do things that haven't been done much.  Did it combine the data sources together in a way that was more useful than either source by itself
-- **Ease of Use / Understanding** : Was it easy to use the application / game, or if it was more complex, was the application or game able to provide you with tutorials or instructions that made understanding it a breeze.
+> 1. Fork this repo
+> 1. Clone your forked copy of this repo
+>    - `git clone https://github.com/[Your Username/FindFlix.git`
+> 1. Change directory into the newly cloned repo
+>    - `cd FindFlix`
+> 1. Install dependencies 
+>    - `npm install`
+> 1. Open a browser and navigate to `localhost:3000` 
 
-### Teams
-- Team 1
-  - Quy Truong
-  - Ben Levine
-  - Jordan Salisbury
-  - Roj Rung
-  
-- Team 2
-  - Kuroash Esmaili
-  - Yulia Chekan
-  - Marie Terrado
-  - Justen Quirante
-
-- Team 3
-  - Michael Capobianco
-  - James Park
-  - Cy Bae
-  - Erick Brownfield
-
-
-### Alpha version Deadline: 
-- 7:00pm Thursday, December 6th, 2018
